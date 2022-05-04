@@ -1,5 +1,8 @@
 package com.toomuchcoder.api.services;
 
+import com.toomuchcoder.api.domains.User;
+import com.toomuchcoder.api.repositories.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,5 +17,8 @@ import org.springframework.stereotype.Service;
  * 2022-05-03         solyikwon      최초 생성
  **/
 @Service
-public class UserServiceImpl extends UserService {
+@RequiredArgsConstructor
+public class UserServiceImpl implements UserService {
+    private final UserRepository userRepository;
 }
+

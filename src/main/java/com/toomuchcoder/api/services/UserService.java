@@ -1,16 +1,19 @@
 package com.toomuchcoder.api.services;
 
+import com.toomuchcoder.api.domains.User;
+
 /**
  * packageName: com.toomuchcoder.api.services
  * fileName        : UserService.java
  * author          : solyikwon
- * date            : 2022-05-03
- * desc            :
- * =============================================
- * DATE              AUTHOR        NOTE
+ *
  * =============================================
  * 2022-05-03         solyikwon      최초 생성
  **/
-public class UserService {
+
+public interface UserService {
+    String join(User user);
+    String login(User user);
+    String logout(User user);
 
 }

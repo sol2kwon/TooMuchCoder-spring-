@@ -17,12 +17,12 @@ import java.util.Date;
  * =============================================
  * 2022-05-03         solyikwon      최초 생성
  **/
+@RestController
 public class HomeController {
-    @RestController
-    public class CommonController {
         @GetMapping("/")
         public String now(){
             return new SimpleDateFormat("yyyy-MM-dd hh:dd:ss").format(new Date());
         }
     }
-}
+
+

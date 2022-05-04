@@ -1,5 +1,9 @@
 package com.toomuchcoder.api.repositories;
 
+import com.toomuchcoder.api.domains.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 /**
  * packageName: com.toomuchcoder.api.repositories
  * fileName        : UserRepository.java
@@ -11,5 +15,6 @@ package com.toomuchcoder.api.repositories;
  * =============================================
  * 2022-05-03         solyikwon      최초 생성
  **/
-public interface UserRepository {
+@Repository
+public interface UserRepository extends JpaRepository<User,Long> {
 }
