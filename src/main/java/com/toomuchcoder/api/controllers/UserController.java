@@ -3,16 +3,15 @@ package com.toomuchcoder.api.controllers;
 import com.toomuchcoder.api.domains.User;
 import com.toomuchcoder.api.services.UserService;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.criterion.Example;
+import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
-
-import java.awt.print.Pageable;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+
+
 
 /**
  * packageName: com.toomuchcoder.api.controllers
@@ -31,51 +30,60 @@ import java.util.Optional;
 
 public class UserController {
     private final UserService service;
-    @PostMapping("/join")
-    public String join(@RequestBody User user){
-        return null;
-    }
+
     @PostMapping("/login")
-    public String login(){
+    public String login(@RequestBody User user) {
         return service.login(user);
-}
+    }
+
     @PostMapping("/logout")
-    public String logout(){
-        return null;
-}
+    public String logout() {
+        return "";
+    }
+
     @GetMapping("/findAll")
     public List<User> findAll() {
-        return null;
+        return service.findAll();
     }
+
     @GetMapping("/findAll/sort")
     public List<User> findAll(Sort sort) {
-        return null;
+        return service.findAll(sort);
     }
+
     @GetMapping("/findAll/pageable")
     public Page<User> findAll(Pageable pageable) {
-        return null;
+
+        return service.findAll(pageable);
     }
+
     @GetMapping("/count")
     public long count() {
-        return 0;
+        return service.count();
     }
+
     @PutMapping("/put")
-    public void put(@RequestBody User user) {
+    public String put(@RequestBody User user) {
+        return service.put(user);
     }
+
     @DeleteMapping("/delete")
     public String delete(@RequestBody User user) {
         return service.delete(user);
     }
+
     @PostMapping("/join")
     public String save(@RequestBody User user) {
         return service.save(user);
     }
+
     @GetMapping("/findById/{userid}")
     public Optional<User> findById(@PathVariable String userid) {
         return service.findById(userid);
     }
+
     @PostMapping("/existsById/{userid}")
     public boolean existsById(@PathVariable String userid) {
-        return false;
+        return service.existsById(userid);
     }
 }
