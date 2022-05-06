@@ -87,3 +87,4 @@ public class UserController {
         return service.existsById(userid);
     }
 }
+//에러잡기 처음부터 다시
