@@ -1,23 +1,25 @@
 package com.toomuchcoder.api.services;
+
 import com.toomuchcoder.api.domains.User;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
-import java.awt.print.Pageable;
 import java.util.List;
 import java.util.Optional;
 
 /**
- * packageName: com.toomuchcoder.api.services
+ * packageName: services
  * fileName        : UserService.java
  * author          : solyikwon
- *
+ * date            : 2022-05-08
+ * desc            :
  * =============================================
- * 2022-05-03         solyikwon      최초 생성
+ * DATE              AUTHOR        NOTE
+ * =============================================
+ * 2022-05-08         solyikwon      최초 생성
  **/
-
 public interface UserService {
-    String login(User user);
 
     List<User> findAll();
 
@@ -36,4 +38,6 @@ public interface UserService {
     Optional<User> findById(String userid);
 
     boolean existsById(String userid);
+
+    String login(User user);
 }

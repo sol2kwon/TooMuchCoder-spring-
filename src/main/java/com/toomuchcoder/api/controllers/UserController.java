@@ -1,90 +1,84 @@
 package com.toomuchcoder.api.controllers;
 
 import com.toomuchcoder.api.domains.User;
-import com.toomuchcoder.api.services.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.data.domain.Pageable;
+import com.toomuchcoder.api.services.UserService;
+
+
 import java.util.List;
 import java.util.Optional;
 
-
-
 /**
- * packageName: com.toomuchcoder.api.controllers
+ * packageName: controllers
  * fileName        : UserController.java
  * author          : solyikwon
- * date            : 2022-05-03
+ * date            : 2022-05-08
  * desc            :
  * =============================================
  * DATE              AUTHOR        NOTE
  * =============================================
- * 2022-05-03         solyikwon      최초 생성
+ * 2022-05-08         solyikwon      최초 생성
  **/
-@RestController //레스트컨트롤러는 @컴포넌트 자식이다.
-@RequestMapping("/user")
+@RestController
 @RequiredArgsConstructor
-
+@RequestMapping
 public class UserController {
     private final UserService service;
 
     @PostMapping("/login")
-    public String login(@RequestBody User user) {
+    public String login(@RequestBody User user){
         return service.login(user);
     }
-
     @PostMapping("/logout")
-    public String logout() {
+    public  String logout(){
         return "";
     }
-
     @GetMapping("/findAll")
     public List<User> findAll() {
         return service.findAll();
     }
-
     @GetMapping("/findAll/sort")
     public List<User> findAll(Sort sort) {
         return service.findAll(sort);
     }
-
     @GetMapping("/findAll/pageable")
     public Page<User> findAll(Pageable pageable) {
-
         return service.findAll(pageable);
     }
-
     @GetMapping("/count")
     public long count() {
         return service.count();
     }
-
     @PutMapping("/put")
     public String put(@RequestBody User user) {
-        return service.put(user);
+        service.put(user);
+        return "";
     }
-
     @DeleteMapping("/delete")
-    public String delete(@RequestBody User user) {
-        return service.delete(user);
-    }
+    public String delete(User user) {
+        service.delete(user);
+        return "";
 
+    }
     @PostMapping("/join")
     public String save(@RequestBody User user) {
-        return service.save(user);
+        service.save(user);
+        return "";
     }
-
     @GetMapping("/findById/{userid}")
     public Optional<User> findById(@PathVariable String userid) {
         return service.findById(userid);
     }
 
-    @PostMapping("/existsById/{userid}")
+    @GetMapping("/existsById/{userid}")
     public boolean existsById(@PathVariable String userid) {
         return service.existsById(userid);
     }
+
+
 }
-//에러잡기 처음부터 다시
+
