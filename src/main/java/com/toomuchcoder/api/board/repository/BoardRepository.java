@@ -1,8 +1,8 @@
-package com.toomuchcoder.api.controllers;
+package com.toomuchcoder.api.board.repository;
 
 /**
- * packageName: controllers
- * fileName        : BoardController.java
+ * packageName: repositories
+ * fileName        : BoardRepository.java
  * author          : solyikwon
  * date            : 2022-05-08
  * desc            :
@@ -11,5 +11,5 @@ package com.toomuchcoder.api.controllers;
  * =============================================
  * 2022-05-08         solyikwon      최초 생성
  **/
-public class BoardController {
+public class BoardRepository {
 }

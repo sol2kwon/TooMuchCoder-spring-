@@ -1,8 +1,8 @@
-package com.toomuchcoder.api.services;
+package com.toomuchcoder.api.auth.controllers;
 
 /**
- * packageName: services
- * fileName        : BoardService.java
+ * packageName: controllers
+ * fileName        : HomeController.java
  * author          : solyikwon
  * date            : 2022-05-08
  * desc            :
@@ -11,5 +11,5 @@ package com.toomuchcoder.api.services;
  * =============================================
  * 2022-05-08         solyikwon      최초 생성
  **/
-public interface BoardService {
+public class AuthController {
 }

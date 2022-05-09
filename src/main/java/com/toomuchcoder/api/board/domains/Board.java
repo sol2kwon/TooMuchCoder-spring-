@@ -1,15 +1,15 @@
-package com.toomuchcoder.api.domains;
+package com.toomuchcoder.api.board.domains;
 
 /**
- * packageName: domains
+ * packageName: com.toomuchcoder.api.board.domains
  * fileName        : Board.java
  * author          : solyikwon
- * date            : 2022-05-08
+ * date            : 2022-05-09
  * desc            :
  * =============================================
  * DATE              AUTHOR        NOTE
  * =============================================
- * 2022-05-08         solyikwon      최초 생성
+ * 2022-05-09         solyikwon      최초 생성
  **/
 public class Board {
 }

@@ -1,6 +1,6 @@
-package com.toomuchcoder.api.repositories;
+package com.toomuchcoder.api.auth.repositories;
 
-import com.toomuchcoder.api.domains.User;
+import com.toomuchcoder.api.auth.domains.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

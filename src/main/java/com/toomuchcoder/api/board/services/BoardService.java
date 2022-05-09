@@ -1,8 +1,8 @@
-package com.toomuchcoder.api.repositories;
+package com.toomuchcoder.api.board.services;
 
 /**
- * packageName: repositories
- * fileName        : BoardRepository.java
+ * packageName: services
+ * fileName        : BoardService.java
  * author          : solyikwon
  * date            : 2022-05-08
  * desc            :
@@ -11,5 +11,5 @@ package com.toomuchcoder.api.repositories;
  * =============================================
  * 2022-05-08         solyikwon      최초 생성
  **/
-public class BoardRepository {
+public interface BoardService {
 }
