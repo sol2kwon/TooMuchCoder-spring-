@@ -1,8 +1,8 @@
-package com.toomuchcoder.api.board.repository;
+package soccer.domains;
 
 /**
- * packageName: com.toomuchcoder.api.board.repository
- * fileName        : CommentRepository.java
+ * packageName: soccer.domains
+ * fileName        : Stadium.java
  * author          : solyikwon
  * date            : 2022-05-09
  * desc            :
@@ -11,5 +11,5 @@ package com.toomuchcoder.api.board.repository;
  * =============================================
  * 2022-05-09         solyikwon      최초 생성
  **/
-public class CommentRepository {
+public class Stadium {
 }

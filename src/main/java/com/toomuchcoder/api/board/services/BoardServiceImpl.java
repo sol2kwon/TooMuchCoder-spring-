@@ -1,6 +1,6 @@
 package com.toomuchcoder.api.board.services;
 
-import com.toomuchcoder.api.board.repository.BoardRepository;
+import com.toomuchcoder.api.board.repositories.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

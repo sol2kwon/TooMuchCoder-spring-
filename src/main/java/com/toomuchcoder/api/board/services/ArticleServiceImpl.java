@@ -1,7 +1,7 @@
 package com.toomuchcoder.api.board.services;
 
 import com.toomuchcoder.api.board.domains.Article;
-import com.toomuchcoder.api.board.repository.ArticleRepository;
+import com.toomuchcoder.api.board.repositories.ArticleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;

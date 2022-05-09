@@ -1,4 +1,4 @@
-package com.toomuchcoder.api.board.repository;
+package com.toomuchcoder.api.board.repositories;
 
 /**
  * packageName: repositories
