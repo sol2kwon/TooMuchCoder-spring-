@@ -1,8 +1,8 @@
-package soccer.controllers;
+package com.toomuchcoder.api.soccer.controllers;
 
 /**
  * packageName: soccer.controllers
- * fileName        : ScheduleController.java
+ * fileName        : TeamController.java
  * author          : solyikwon
  * date            : 2022-05-09
  * desc            :
@@ -11,5 +11,5 @@ package soccer.controllers;
  * =============================================
  * 2022-05-09         solyikwon      최초 생성
  **/
-public class ScheduleController {
+public class TeamController {
 }

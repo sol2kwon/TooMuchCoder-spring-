@@ -1,4 +1,4 @@
-package soccer.services;
+package com.toomuchcoder.api.soccer.services;
 
 /**
  * packageName: soccer.services

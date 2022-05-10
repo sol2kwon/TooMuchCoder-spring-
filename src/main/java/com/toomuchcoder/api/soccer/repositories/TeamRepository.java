@@ -1,8 +1,8 @@
-package soccer.services;
+package com.toomuchcoder.api.soccer.repositories;
 
 /**
- * packageName: soccer.services
- * fileName        : TeamService.java
+ * packageName: soccer.repositories
+ * fileName        : TeamRepository.java
  * author          : solyikwon
  * date            : 2022-05-09
  * desc            :
@@ -11,5 +11,5 @@ package soccer.services;
  * =============================================
  * 2022-05-09         solyikwon      최초 생성
  **/
-public interface TeamService {
+public class TeamRepository {
 }

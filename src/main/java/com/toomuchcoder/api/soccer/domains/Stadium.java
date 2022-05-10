@@ -1,8 +1,8 @@
-package soccer.controllers;
+package com.toomuchcoder.api.soccer.domains;
 
 /**
- * packageName: com.toomuchcoder.api.soccer.controller
- * fileName        : PlayerController.java
+ * packageName: soccer.domains
+ * fileName        : Stadium.java
  * author          : solyikwon
  * date            : 2022-05-09
  * desc            :
@@ -11,5 +11,5 @@ package soccer.controllers;
  * =============================================
  * 2022-05-09         solyikwon      최초 생성
  **/
-public class PlayerController {
+public class Stadium {
 }

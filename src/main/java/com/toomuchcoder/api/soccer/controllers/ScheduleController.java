@@ -1,8 +1,8 @@
-package soccer.repositories;
+package com.toomuchcoder.api.soccer.controllers;
 
 /**
- * packageName: soccer.repositories
- * fileName        : StadiumRepository.java
+ * packageName: soccer.controllers
+ * fileName        : ScheduleController.java
  * author          : solyikwon
  * date            : 2022-05-09
  * desc            :
@@ -11,5 +11,5 @@ package soccer.repositories;
  * =============================================
  * 2022-05-09         solyikwon      최초 생성
  **/
-public class StadiumRepository {
+public class ScheduleController {
 }

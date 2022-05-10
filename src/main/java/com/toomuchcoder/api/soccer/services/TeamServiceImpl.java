@@ -1,8 +1,8 @@
-package soccer.services;
+package com.toomuchcoder.api.soccer.services;
 
 /**
  * packageName: soccer.services
- * fileName        : ScheduleServiceImpl.java
+ * fileName        : TeamServiceImpl.java
  * author          : solyikwon
  * date            : 2022-05-09
  * desc            :
@@ -11,5 +11,5 @@ package soccer.services;
  * =============================================
  * 2022-05-09         solyikwon      최초 생성
  **/
-public class ScheduleServiceImpl {
+public class TeamServiceImpl {
 }

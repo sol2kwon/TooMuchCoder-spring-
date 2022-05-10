@@ -1,4 +1,4 @@
-package soccer.domains;
+package com.toomuchcoder.api.soccer.domains;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;

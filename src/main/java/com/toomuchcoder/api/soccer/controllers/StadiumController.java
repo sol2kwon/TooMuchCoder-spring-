@@ -1,8 +1,8 @@
-package com.toomuchcoder.api.common.algo01;
+package com.toomuchcoder.api.soccer.controllers;
 
 /**
- * packageName: com.toomuchcoder.api.common.algo01
- * fileName        : Quiz00.java
+ * packageName: soccer.controllers
+ * fileName        : StadiumController.java
  * author          : solyikwon
  * date            : 2022-05-09
  * desc            :
@@ -11,5 +11,5 @@ package com.toomuchcoder.api.common.algo01;
  * =============================================
  * 2022-05-09         solyikwon      최초 생성
  **/
-public class Quiz00 {
+public class StadiumController {
 }

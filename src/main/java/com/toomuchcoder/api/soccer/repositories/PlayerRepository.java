@@ -1,8 +1,8 @@
-package soccer.domains;
+package com.toomuchcoder.api.soccer.repositories;
 
 /**
- * packageName: soccer.domains
- * fileName        : Stadium.java
+ * packageName: soccer.repositories
+ * fileName        : PlayerRepository.java
  * author          : solyikwon
  * date            : 2022-05-09
  * desc            :
@@ -11,5 +11,5 @@ package soccer.domains;
  * =============================================
  * 2022-05-09         solyikwon      최초 생성
  **/
-public class Stadium {
+public class PlayerRepository {
 }
