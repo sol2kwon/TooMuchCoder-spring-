@@ -2,6 +2,7 @@ package com.toomuchcoder.api.common.dataStructure;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 import java.lang.reflect.Member;
@@ -39,7 +40,7 @@ public class MemberCRUD {
                                 .phone("010-9000-9000")
                                 .profileImg("hong.jpg")
                                 .build();
-                service.save(hong);
+                    service.save(hong);
                     Member kim = new Member.Builder("kim")
                             .email("kim@test.com")
                             .password("2")
@@ -56,13 +57,25 @@ public class MemberCRUD {
                             .profileImg("you.jpg")
                             .build();
                     service.save(you);
-                case "2":break;
-                case "3":break;
-                case "4":break;
+                    break;
+                case "2":
+                    break;
+                case "3":
+                    Member temp = new Member();
+                    temp.setUserid("kim");
+                    service.delete(temp);
+                    break;
+                case "4":
+                    System.out.println(service.findByName("유관순"));
+                    break;
                 case "5":break;
                 case "6":break;
-                case "7":break;
-                case "8":break;
+                case "7":
+                    System.out.println(service.count()+"명");
+                    break;
+                case "8":
+                    break;
+
                 case "9":
                     service.clear();
                     break;
@@ -70,7 +83,7 @@ public class MemberCRUD {
             }
         }
     }//컨트롤러
-    @Data  @AllArgsConstructor
+    @Data @NoArgsConstructor
         static class Member{
         protected String userid, name, password, profileImg, phone, email;
 
