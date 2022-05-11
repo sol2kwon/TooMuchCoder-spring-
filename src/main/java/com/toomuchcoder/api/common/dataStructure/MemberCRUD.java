@@ -6,10 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 import java.lang.reflect.Member;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 import java.util.function.BiConsumer;
 
 /**
@@ -136,11 +133,12 @@ public class MemberCRUD {
     }
 
     static class MemberServiceImpl implements MemberService{
-        Map<String,Member>map;
+       private final Map<String,Member>map;
+       List<Member> list = new ArrayList<>();
 
         MemberServiceImpl(){
             this.map = new HashMap<>();
-        }
+        }// 바깥쪽에 주면 보안 뚫림 기능 죽음 위험함..
         @Override public void save(Member member){ map.put(member.getUserid(), member);}
 
         @Override
