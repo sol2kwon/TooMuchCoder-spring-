@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.function.Predicate;
 
 /**
  * packageName: com.toomuchcoder.api.common.dataStructure
@@ -22,13 +23,49 @@ import java.util.Scanner;
 public class AppleList {
     public static void main(String[] args) {
         Scanner a = new Scanner(System.in);
+        AppleService service = new AppleServiceImpl();
         while (true){
-            System.out.println("0.나가기 1.save 2.update 3.delete");
+            System.out.println("0.나가기 1.save 2.update 3.delete 4.findById 5.findByName 6.findAll 7.count 8.existsById 9.clear");
             switch (a.next()){
                 case "0":return;
-                case "1":break;
+                case "1":
+                    Apple yd = new Apple.Builder()
+                            .origin("영동")
+                            .color("RED")
+                            .price(1000)
+                            .build();
+                    service.save(yd);
+                    Apple yd1 = new Apple.Builder()
+                            .origin("영동")
+                            .color("BlUE")
+                            .price(1500)
+                            .build();
+                    service.save(yd1);
+                    Apple pg = new Apple.Builder()
+                            .origin("풍기")
+                            .color("RED")
+                            .price(2000)
+                            .build();
+                    service.save(pg);
+                    break;
                 case "2":break;
                 case "3":break;
+                case "4":break;
+                case "5":
+                    System.out.println("5.findByOrigin");
+                    System.out.println(service.findByOrigin("영동"));
+                    break;
+                case "6":
+                    System.out.println("6.findAll: \n"+service.findAll());
+                    break;
+                case "7":
+                    System.out.println("총 회원수: "+service.count()+"명");
+                    break;
+                case "8":break;
+                case "9":
+                service.clear();
+                break;
+
                 default:break;
             }
 
@@ -39,7 +76,7 @@ public class AppleList {
         protected String color,origin;
         protected int price;
 
-        public Apple(Apple.Builder builder){
+        public Apple(Builder builder){
             this.color = builder.color;
             this.origin = builder.origin;
             this.price = builder.price;
@@ -52,18 +89,21 @@ public class AppleList {
             public Builder price (int price){this.price = price;return this;}
             Apple build(){return new Apple(this);}
         }
+        @Override public  String toString(){
+            return String.format("[사과 스펙] origin: %s, color:%s, price: %d",color,origin,price );
+        }
     }
 
     interface AppleService{
         void save(Apple apple);
-        void update(Apple apple, int i);
+        void update(int i,Apple apple);
         void delete(Apple apple);
         List<Apple> findAll();
-
         List<Apple>findByOrigin(String origin);
         List<Apple>findByColor(String color);
         Apple findById(int i);
         int count();
+        void clear();
 
 
     }
@@ -80,7 +120,7 @@ public class AppleList {
         }
 
         @Override
-        public void update(Apple apple, int i) {
+        public void update(int i,Apple apple) {
              list.set(i,apple);
 
         }
@@ -98,7 +138,8 @@ public class AppleList {
 
         @Override
         public List<Apple> findByOrigin(String origin) {
-            return null;
+            return filterApplesByOrigin(this.list,origin);
+
         }
 
         @Override
@@ -115,6 +156,29 @@ public class AppleList {
         public int count() {
             return list.size();
         }
+
+        @Override
+        public void clear() {
+            list.clear();
+        }
+    }
+    static List<Apple> filterApples(List<Apple> list, Predicate<Apple> p){
+        List<Apple> result = new ArrayList<>();
+        for(Apple apple: list){
+            if(p.test(apple)){
+                result.add(apple);
+            }
+        }
+        return result;
+    }
+    static List<Apple> filterApplesByOrigin(List<Apple> list, String origin){
+        List<Apple> result = new ArrayList<>();
+        for(Apple apple: list){
+            if(origin.equals(apple.getOrigin())){
+                result.add(apple);
+            }
+        }
+        return result;
     }
 
 }
