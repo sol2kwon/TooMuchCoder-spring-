@@ -1,9 +1,10 @@
 package com.toomuchcoder.api.common.lambda;
 
+import com.toomuchcoder.api.common.dataStructure.MemberCRUD;
+
+import java.io.File;
 import java.util.Arrays;
-import java.util.function.BiPredicate;
-import java.util.function.Function;
-import java.util.function.Predicate;
+import java.util.function.*;
 
 import static com.toomuchcoder.api.common.dataStructure.AppleList.Apple;
 
@@ -20,6 +21,7 @@ import static com.toomuchcoder.api.common.dataStructure.AppleList.Apple;
  **/
 public class Lambda {
     public static void main(String[] args) {
+
         //System.out.println(integer("900"));
         //System.out.println(Lambda.string(1));
         System.out.println(string(new Apple.Builder().origin("영동").color("RED").price(3000).build()));
@@ -33,6 +35,7 @@ public class Lambda {
                );
         System.out.println(array(10).length);
     }
+
     public static int integer(String arg){
         Function<String, Integer> f = Integer::parseInt;
         return f.apply(arg);
@@ -53,9 +56,24 @@ public class Lambda {
     // = int[]::new
 
     public static int[] array(int a){
-            Function<Integer,int[]> f = int[]::new;
+        Function<Integer,int[]> f = int[]::new;
         return f.apply(a);
 
     }
+    public static int random(int min, int max){
+        //BiFunction<Integer,Integer,Integer>=(int)(Math.random()*max)+min;
+        // BiFunction<Integer,Integer,Double> f = Math::random;
+        //Supplier<Double> f = Math::random;
+        //return f.get()
+        //return (int)(f.get()*max)+min;
+        BiFunction<Integer,Integer,Integer>f=(min1,max1)->(int)(Math.random()*min1)+max1;
+        return f.apply(min,max);
+
     }
+    public static File makeFile(String a){
+        Function<String,File>f= File::new;
+        return f.apply(a);
+    }
+
+}
 

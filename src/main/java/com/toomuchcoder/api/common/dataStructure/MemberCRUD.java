@@ -9,6 +9,8 @@ import java.lang.reflect.Member;
 import java.util.*;
 import java.util.function.BiConsumer;
 
+import static com.toomuchcoder.api.common.lambda.Lambda.array;
+
 /**
  * packageName: dataStructure
  * fileName        : MemberCRUD.java
@@ -71,6 +73,7 @@ public class MemberCRUD {
                     System.out.println(service.count()+"명");
                     break;
                 case "8":
+                    System.out.println(array(8).length);
                     break;
 
                 case "9":
