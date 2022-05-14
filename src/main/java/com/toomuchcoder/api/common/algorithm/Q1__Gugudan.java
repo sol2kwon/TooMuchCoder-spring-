@@ -109,8 +109,6 @@ public class Q1__Gugudan {
         int b = (int)(Math.random()*3)+1;
         System.out.println((a == b) ? "Draw" : (b > (a+1)%3) ? "Win":"lose");
         System.out.println(" ----------- 2 -------------");
-        a = (int)(Math.random()*3)+1;
-        b = (int)(Math.random()*3)+1;
         System.out.println(a);
         System.out.println(b);
         String s = "";

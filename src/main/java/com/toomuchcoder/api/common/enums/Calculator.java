@@ -18,8 +18,6 @@ import java.util.function.BiFunction;
  * 2022-05-13         solyikwon      최초 생성
  **/
 public class Calculator {
-
-
     @RequiredArgsConstructor
     enum Operation{
         PLUS("+", (x,y)->(x + y)),

@@ -1,12 +1,10 @@
 package com.toomuchcoder.api.common.lambda;
 
-import com.toomuchcoder.api.common.dataStructure.MemberCRUD;
-
 import java.io.File;
 import java.util.Arrays;
 import java.util.function.*;
 
-import static com.toomuchcoder.api.common.dataStructure.AppleList.Apple;
+import static com.toomuchcoder.api.common.dataStructure.AppleApp.Apple;
 
 /**
  * packageName: com.toomuchcoder.api.common.lambda

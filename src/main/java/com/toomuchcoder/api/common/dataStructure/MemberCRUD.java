@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.tool.schema.internal.exec.ScriptTargetOutputToFile;
+import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Member;
 import java.util.*;
@@ -24,67 +26,8 @@ import static com.toomuchcoder.api.common.lambda.Lambda.array;
  **/
 @RequiredArgsConstructor
 public class MemberCRUD {
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        MemberService service = new MemberServiceImpl();
-        while(true){
-            System.out.println("0.exit 1.save 2.update 3.delete 4.findById 5.findByName 6.findAll 7.count 8.existsById 9.clear");
-            switch (s.next()){
-                case "0":return;
-                case "1":
-                Member hong = new Member.Builder("hong")
-                                .email("hong@test.com")
-                                .password("1")
-                                .name("홍길동")
-                                .phone("010-9000-9000")
-                                .profileImg("hong.jpg")
-                                .build();
-                    service.save(hong);
-                    Member kim = new Member.Builder("kim")
-                            .email("kim@test.com")
-                            .password("2")
-                            .name("김유신")
-                            .phone("010-0044-9944")
-                            .profileImg("kim.jpg")
-                            .build();
-                    service.save(kim);
-                    Member you = new Member.Builder("you")
-                            .email("you@test.com")
-                            .password("3")
-                            .name("유관순")
-                            .phone("010-0800-9889")
-                            .profileImg("you.jpg")
-                            .build();
-                    service.save(you);
-                    break;
-                case "2":
-                    break;
-                case "3":
-                    Member temp = new Member();
-                    temp.setUserid("kim");
-                    service.delete(temp);
-                    break;
-                case "4":
-                    System.out.println(service.findByName("유관순"));
-                    break;
-                case "5":break;
-                case "6":break;
-                case "7":
-                    System.out.println(service.count()+"명");
-                    break;
-                case "8":
-                    System.out.println(array(8).length);
-                    break;
-
-                case "9":
-                    service.clear();
-                    break;
-                default:break;
-            }
-        }
-    }//컨트롤러
     @Data @NoArgsConstructor
-        static class Member{
+    static class Member{
         protected String userid, name, password, profileImg, phone, email;
 
         public Member(Builder builder){
@@ -113,7 +56,7 @@ public class MemberCRUD {
             return String.format("[사용자 스펙] userid: %s, name: %s, password: %s, profileImg: %s, phone: %s, email: %s ",
                     userid, name, password, profileImg, phone, email);
         }
-    }//도메인
+    }
 
     interface MemberService{
         void save(Member member);
@@ -136,8 +79,8 @@ public class MemberCRUD {
     }
 
     static class MemberServiceImpl implements MemberService{
-       private final Map<String,Member>map;
-       List<Member> list = new ArrayList<>();
+        private final Map<String,Member>map;
+        List<Member> list = new ArrayList<>();
 
         MemberServiceImpl(){
             this.map = new HashMap<>();
@@ -177,7 +120,73 @@ public class MemberCRUD {
 
         @Override
         public void clear() {
-             map.clear();
+            map.clear();
         }
+
     }
-}//서비스
+    @Test
+    void MemberTest(){
+                MemberService service = new MemberServiceImpl();
+                System.out.println("0.exit 1.save 2.update 3.delete 4.findById 5.findByName 6.findAll 7.count 8.existsById 9.clear");
+                System.out.println("### 1.save ###");
+                Member hong = new Member.Builder("hong")
+                        .email("hong@test.com")
+                        .password("1")
+                        .name("홍길동")
+                        .phone("010-9000-9000")
+                        .profileImg("hong.jpg")
+                        .build();
+                service.save(hong);
+                Member kim = new Member.Builder("kim")
+                        .email("kim@test.com")
+                        .password("2")
+                        .name("김유신")
+                        .phone("010-0044-9944")
+                        .profileImg("kim.jpg")
+                        .build();
+                service.save(kim);
+                Member you = new Member.Builder("you")
+                        .email("you@test.com")
+                        .password("3")
+                        .name("유관순")
+                        .phone("010-0800-9889")
+                        .profileImg("you.jpg")
+                        .build();
+                service.save(you);
+                System.out.println("### 2.update ###");
+                Member choi = new Member.Builder("choi")
+                        .email("you@test.com")
+                        .password("3")
+                        .name("유관순")
+                        .phone("010-0800-9889")
+                        .profileImg("you.jpg")
+                        .build();
+                service.update(choi);
+
+                System.out.println("### 3.delete ###");
+
+            case "3":
+                Member temp = new Member();
+                temp.setUserid("kim");
+                service.delete(temp);
+                break;
+            case "4":
+                System.out.println(service.findByName("유관순"));
+                break;
+            case "5":break;
+            case "6":break;
+            case "7":
+                System.out.println(service.count()+"명");
+                break;
+            case "8":
+                System.out.println(array(8).length);
+                break;
+
+            case "9":
+                service.clear();
+                break;
+            default:break;
+    }
+
+
+}
