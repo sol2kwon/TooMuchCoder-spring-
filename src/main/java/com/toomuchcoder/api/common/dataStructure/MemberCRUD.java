@@ -48,8 +48,7 @@ public class MemberCRUD {
             public Builder phone(String phone){this.phone=phone;return this;}
             public Builder email (String email){this.email=email;return this;}
             Member build(){return new Member(this);}
-
-
+            
         }
 
         @Override public String toString(){
@@ -71,7 +70,7 @@ public class MemberCRUD {
 
         List<Member> findAll( );
 
-        int count();
+        int countAll();
 
         boolean existsById(String id);
 
@@ -110,7 +109,7 @@ public class MemberCRUD {
             return null;}
 
         @Override
-        public int count() {
+        public int countAll() {
             return map.size();
         }
 
@@ -164,29 +163,18 @@ public class MemberCRUD {
                 service.update(choi);
 
                 System.out.println("### 3.delete ###");
-
-            case "3":
-                Member temp = new Member();
-                temp.setUserid("kim");
-                service.delete(temp);
-                break;
-            case "4":
-                System.out.println(service.findByName("유관순"));
-                break;
-            case "5":break;
-            case "6":break;
-            case "7":
-                System.out.println(service.count()+"명");
-                break;
-            case "8":
+                service.delete (new Member.Builder("choi")
+                        .email("you@test.com")
+                        .password("3")
+                        .name("유관순")
+                        .phone("010-0800-9889")
+                        .profileImg("you.jpg")
+                        .build());
+                System.out.println("아이디로 사용자 정보"+service.findById("hong"));
+                System.out.println("이름으로 사용자 정보:"+service.findByName("유관순"));
+                System.out.println("사용자 모두의 정보"+service.findAll());
+                System.out.println("사용자 전체 명수"+service.countAll()+"명");
                 System.out.println(array(8).length);
-                break;
-
-            case "9":
-                service.clear();
-                break;
-            default:break;
+                System.out.println("clear 후 카운트 0 확인: "+ service.countAll());
     }
-
-
 }
