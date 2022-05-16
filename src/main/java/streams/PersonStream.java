@@ -1,0 +1,68 @@
+package streams;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import org.junit.jupiter.api.Test;
+
+import java.net.PortUnreachableException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+/**
+ * packageName: streams
+ * fileName        : PersonStream.java
+ * author          : solyikwon
+ * date            : 2022-05-16
+ * desc            :
+ * =============================================
+ * DATE              AUTHOR        NOTE
+ * =============================================
+ * 2022-05-16         solyikwon      최초 생성
+ **/
+public class PersonStream {
+    @Getter @Builder @NoArgsConstructor @AllArgsConstructor
+    public static class Person{
+        protected String name,ssn;
+
+        public String toString(){
+            String gender = ssn.substring(7).equals("1")||ssn.substring(7).equals("3")?"남자":"여자";
+            return String.format("이름 %s,성별 %s", name, gender);
+        }
+    }
+
+
+
+    interface PersonService {
+
+        List<Person> search(List<Person>arr);
+
+
+    }
+    static class PersonServiceImpl implements PersonService{
+
+        @Override
+        public List<Person> search(List<Person> arr) {
+            return arr
+                    .stream()
+                    .filter(e->e.getName().equals("홍길동"))
+                    .collect(Collectors.toList());
+        }
+    }
+    @Test
+    void personTest(){
+        List<Person> arr = Arrays.asList(
+           Person.builder().name("홍길동").ssn("900120-1").build(),
+                Person.builder().name("김유신").ssn("970620-1").build(),
+                Person.builder().name("유관순").ssn("940928-4").build()
+
+        );
+        new PersonServiceImpl()
+                .search(arr)
+                .forEach(System.out::println);
+
+    }
+
+}

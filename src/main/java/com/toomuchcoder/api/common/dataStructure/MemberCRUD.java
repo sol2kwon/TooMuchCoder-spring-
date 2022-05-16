@@ -1,17 +1,13 @@
 package com.toomuchcoder.api.common.dataStructure;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.tool.schema.internal.exec.ScriptTargetOutputToFile;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Member;
 import java.util.*;
-import java.util.function.BiConsumer;
 
-import static com.toomuchcoder.api.common.lambda.Lambda.array;
+import static com.toomuchcoder.api.common.lambdas.Lambda.array;
 
 /**
  * packageName: dataStructure
@@ -48,7 +44,7 @@ public class MemberCRUD {
             public Builder phone(String phone){this.phone=phone;return this;}
             public Builder email (String email){this.email=email;return this;}
             Member build(){return new Member(this);}
-            
+
         }
 
         @Override public String toString(){

@@ -1,4 +1,4 @@
-package com.toomuchcoder.api.common.lambda;
+package com.toomuchcoder.api.common.lambdas;
 
 import java.io.File;
 import java.util.Arrays;
