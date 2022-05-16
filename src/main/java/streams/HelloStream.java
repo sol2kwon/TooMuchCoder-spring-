@@ -59,16 +59,16 @@ public class HelloStream {
     }
 
     interface HelloService {
-        Set<Hello> greet(List<Hello>arr);
+        List<Hello> greet(List<Hello>arr);
     }
 
     static class HelloServiceImpl implements HelloService {
         @Override
-        public Set<Hello> greet(List<Hello>arr) {
+        public List<Hello> greet(List<Hello>arr) {
            return   arr
                     .stream()
                     .filter(e->e.getInLanguage().equals("영어"))
-                    .collect(Collectors.toSet());
+                    .collect(Collectors.toList());
         }
     }
 
