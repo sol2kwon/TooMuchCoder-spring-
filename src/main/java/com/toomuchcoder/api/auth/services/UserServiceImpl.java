@@ -48,8 +48,8 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public String put(User user) {
-        repository.put(user);
+    public String update(User user) {
+        repository.update(user);
         return "";
     }
 

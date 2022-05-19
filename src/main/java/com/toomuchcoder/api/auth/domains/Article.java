@@ -42,7 +42,5 @@ public class Article {
             @JoinColumn(name = "user_id")
     User user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-            @JoinColumn(name = "board_id")
-    Board board;
+
 }

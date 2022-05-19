@@ -39,7 +39,8 @@ public class User {
     private String regDate;
 
     @OneToMany(mappedBy = "user")
-    List<Article> articles = new ArrayList<>();
+    List<Article>articles = new ArrayList<>();
+
 
 
 }
