@@ -1,15 +1,28 @@
 package com.toomuchcoder.api.soccer.controllers;
 
+import com.toomuchcoder.api.soccer.services.PlayerService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 /**
- * packageName: com.toomuchcoder.api.soccer.controller
- * fileName        : PlayerController.java
- * author          : solyikwon
- * date            : 2022-05-09
- * desc            :
- * =============================================
- * DATE              AUTHOR        NOTE
- * =============================================
- * 2022-05-09         solyikwon      최초 생성
- **/
+ * packageName   :   com.toomuchcoder.api.soccer.controllers
+ * fileName      :   PlayerController
+ * author        :   JeongmyeongHong
+ * date          :   2022-05-09
+ * desc          :
+ * ============================================
+ * DATE             AUTHOR              NOTE
+ * ============================================
+ * 2022-05-09      JeongmyoengHong     최초 생성
+ * * 2022-05-19      Kwonsolyi    수정
+ */
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/player")
 public class PlayerController {
+    private final PlayerService service;
+
+
+
 }

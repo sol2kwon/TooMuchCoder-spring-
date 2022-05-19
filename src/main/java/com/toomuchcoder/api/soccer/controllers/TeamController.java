@@ -1,15 +1,25 @@
 package com.toomuchcoder.api.soccer.controllers;
 
+import com.toomuchcoder.api.soccer.services.TeamService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 /**
- * packageName: soccer.controllers
- * fileName        : TeamController.java
- * author          : solyikwon
- * date            : 2022-05-09
- * desc            :
- * =============================================
- * DATE              AUTHOR        NOTE
- * =============================================
- * 2022-05-09         solyikwon      최초 생성
- **/
+ * packageName   :   com.toomuchcoder.api.soccer.controllers
+ * fileName      :   TeamController
+ * author        :   JeongmyeongHong
+ * date          :   2022-05-09
+ * desc          :
+ * ============================================
+ * DATE             AUTHOR              NOTE
+ * ============================================
+ * 2022-05-09      JeongmyoengHong     최초 생성
+ * * 2022-05-19      Kwonsolyi    수정
+ */
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/team")
 public class TeamController {
+    private final TeamService service;
 }

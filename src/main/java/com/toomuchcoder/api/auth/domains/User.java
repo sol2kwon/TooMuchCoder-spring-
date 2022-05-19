@@ -38,8 +38,8 @@ public class User {
     @Column(name = "reg_date") @NotNull
     private String regDate;
 
-    @OneToMany(mappedBy = "u")
-    List<Article>a = new ArrayList<>();
+    @OneToMany(mappedBy = "user")
+    List<Article> articles = new ArrayList<>();
 
 
 }

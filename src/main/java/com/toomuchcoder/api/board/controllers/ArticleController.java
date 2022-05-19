@@ -2,7 +2,7 @@ package com.toomuchcoder.api.board.controllers;
 
 
 import com.toomuchcoder.api.board.services.ArticleService;
-import com.toomuchcoder.api.board.domains.Article;
+import com.toomuchcoder.api.board.domains.Article2;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -29,17 +29,17 @@ public class ArticleController {
 
     // Embeded Methods
     @GetMapping("/findAll")
-    public List<Article> findAll() {
+    public List<Article2> findAll() {
         return service.findAll();
     }
 
     @GetMapping("/findAll/sort")
-    public List<Article> findAll(Sort sort) {
+    public List<Article2> findAll(Sort sort) {
         return service.findAll(sort);
     }
 
     @GetMapping("/findAll/pageable")
-    public Page<Article> findAll(Pageable pageable) {
+    public Page<Article2> findAll(Pageable pageable) {
         return service.findAll(pageable);
     }
 
@@ -49,12 +49,12 @@ public class ArticleController {
     }
 
     @DeleteMapping("/delete")
-    public String delete(@RequestBody Article Article) {
+    public String delete(@RequestBody Article2 Article) {
         return service.delete(Article);
     }
 
     @PostMapping("/join")
-    public String save(@RequestBody Article Article) {
+    public String save(@RequestBody Article2 Article) {
         return service.save(Article);
     }
 

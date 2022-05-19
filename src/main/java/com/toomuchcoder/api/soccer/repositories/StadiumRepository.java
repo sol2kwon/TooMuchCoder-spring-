@@ -1,15 +1,21 @@
 package com.toomuchcoder.api.soccer.repositories;
 
+import com.toomuchcoder.api.soccer.domains.Stadium;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 /**
- * packageName: soccer.repositories
- * fileName        : StadiumRepository.java
- * author          : solyikwon
- * date            : 2022-05-09
- * desc            :
- * =============================================
- * DATE              AUTHOR        NOTE
- * =============================================
- * 2022-05-09         solyikwon      최초 생성
- **/
-public class StadiumRepository {
+ * packageName   :   com.toomuchcoder.api.soccer.repositories
+ * fileName      :   Stadium
+ * author        :   JeongmyeongHong
+ * date          :   2022-05-09
+ * desc          :
+ * ============================================
+ * DATE             AUTHOR              NOTE
+ * ============================================
+ * 2022-05-09      JeongmyoengHong     최초 생성
+ * * 2022-05-19      Kwonsolyi    수정
+ */
+@Repository
+public interface StadiumRepository extends JpaRepository<Stadium, Long> {
 }

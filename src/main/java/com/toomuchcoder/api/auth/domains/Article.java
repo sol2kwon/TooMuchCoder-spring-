@@ -40,7 +40,7 @@ public class Article {
 
     @ManyToOne(fetch = FetchType.LAZY)
             @JoinColumn(name = "user_id")
-    User u;
+    User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
             @JoinColumn(name = "board_id")

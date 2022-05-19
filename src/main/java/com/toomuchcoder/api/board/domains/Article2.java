@@ -20,7 +20,7 @@ import javax.persistence.*;
 @Entity
 @Data
 @Table(name = "articles")
-public class Article {
+public class Article2 {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false) private String projects;

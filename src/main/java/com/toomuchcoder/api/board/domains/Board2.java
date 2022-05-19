@@ -11,5 +11,5 @@ package com.toomuchcoder.api.board.domains;
  * =============================================
  * 2022-05-09         solyikwon      최초 생성
  **/
-public class Board {
+public class Board2 {
 }
