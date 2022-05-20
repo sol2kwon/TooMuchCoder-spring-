@@ -48,10 +48,10 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public String update(User user) {
-        repository.update(user);
-        return "";
+    public void update(User user) {
+        return;
     }
+
 
     @Override
     public String delete(User user) {
@@ -77,7 +77,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public String login(User user) {
-        return repository.login(user);
+        return "";
 
     }
 }

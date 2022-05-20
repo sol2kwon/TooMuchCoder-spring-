@@ -22,14 +22,11 @@ import java.util.Optional;
  **/
 public interface TeamService {
 
-
     void delete(Team team);
 
     List<Team> findAll();
 
     long count();
-
-   
 
     void save(Team team);
 

@@ -46,12 +46,13 @@ public class ScheduleServiceImpl implements ScheduleService{
 
     @Override
     public void update(Schedule schedule) {
+        return;
 
     }
 
     @Override
     public void save(Schedule schedule) {
-        repository.update(schedule);
+        repository.save(schedule);
 
     }
 

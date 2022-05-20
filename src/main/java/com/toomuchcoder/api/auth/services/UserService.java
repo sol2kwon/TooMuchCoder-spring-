@@ -29,8 +29,6 @@ public interface UserService {
 
     long count();
 
-    String update(User user);
-
     String delete(User user);
 
     String save(User user);
@@ -40,4 +38,6 @@ public interface UserService {
     boolean existsById(String userid);
 
     String login(User user);
+
+    void update(User user);
 }

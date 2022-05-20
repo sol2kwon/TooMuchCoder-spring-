@@ -1,20 +1,18 @@
-package com.toomuchcoder.api.auth.domains;
+package com.toomuchcoder.api.board.domains;
 
 import com.sun.istack.NotNull;
+import com.toomuchcoder.api.auth.domains.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.repository.cdi.Eager;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * packageName: com.toomuchcoder.api.auth.domains
- * fileName        : Board.java
+ * fileName        : Article.java
  * author          : solyikwon
  * date            : 2022-05-18
  * desc            :
@@ -29,19 +27,23 @@ import java.util.List;
 @AllArgsConstructor
 @Component
 @Entity
-@Table(name="boards")
-
-public class Board {
+@Table(name="articles")
+public class Article {
     @Id
-    @Column(name = "board_id")
-    @GeneratedValue
-    private long boardId;
-    @Column private @NotNull
-    String boardName;
-    @Column(name = "create_date") @NotNull private String create_date;
+    @Column(name = "article_id")
+    @GeneratedValue private long articleId;
+    @Column @NotNull private String title;
+    @Column @NotNull private String content;
+    @Column(name = "written_date") @NotNull private String writtenDate;
 
-    @OneToMany(mappedBy = "board")
-    List<Article> articles =new ArrayList<>();
+    @ManyToOne(fetch = FetchType.LAZY)
+            @JoinColumn(name = "user_id")
+    User user;
+
+    @ManyToOne
+        @JoinColumn (name = "board_id")
+    Board board;
+
 
 
 

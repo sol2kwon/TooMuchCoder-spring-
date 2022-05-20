@@ -53,7 +53,7 @@ public class UserController {
     public long count() {
         return service.count();
     }
-    @PutMapping("/put")
+    @PutMapping("/update")
     public String update(@RequestBody User user) {
         service.update(user);
         return "";

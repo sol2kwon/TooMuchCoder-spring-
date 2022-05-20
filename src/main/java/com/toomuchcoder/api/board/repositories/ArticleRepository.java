@@ -1,6 +1,8 @@
 package com.toomuchcoder.api.board.repositories;
 
-import com.toomuchcoder.api.board.domains.Article2;
+
+import com.toomuchcoder.api.board.domains.Article;
+import com.toomuchcoder.api.soccer.domains.Player;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,6 +17,9 @@ import org.springframework.stereotype.Repository;
  * =============================================
  * 2022-05-09         solyikwon      최초 생성
  **/
+interface ArticleCustomRepository{
+    void update(Article article);
+}
 @Repository
-public interface ArticleRepository extends JpaRepository<Article2,Long> {
+public interface ArticleRepository extends JpaRepository<Article,Long> {
 }

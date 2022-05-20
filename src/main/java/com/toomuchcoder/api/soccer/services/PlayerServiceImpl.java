@@ -45,7 +45,7 @@ public class PlayerServiceImpl implements PlayerService{
 
     @Override
     public void update(Player player) {
-         repository.update(player);
+         return;
 
     }
 

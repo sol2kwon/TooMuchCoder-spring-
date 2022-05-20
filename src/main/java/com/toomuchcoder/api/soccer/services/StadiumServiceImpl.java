@@ -37,7 +37,7 @@ public class StadiumServiceImpl implements StadiumService{
 
     @Override
     public void update(Stadium stadium) {
-        repository.update(stadium);
+       return;
 
 
     }
