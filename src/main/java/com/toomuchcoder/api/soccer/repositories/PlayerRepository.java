@@ -25,9 +25,10 @@ interface PlayerCustomRepository{
     void update(Player player);
 
     // 선수들의 키와 몸무게를 변경하시오
-    @Query(value="")
-    int update();
-    
+    @Query(value="update Player p set p.height = :height, p.weight = :weight where p.playerNo = :playerNo",
+            nativeQuery = true)
+    int update(@Param("height") String height, @Param("weight") String weight);
+
 
     // 002. 플레이어의 포지션 종류를 나열하시오.단 중복은 제거하시오
     @Query(value = "select distinct p.position from Player p")
@@ -48,6 +49,13 @@ interface PlayerCustomRepository{
             + "and p.playerName like :familyName \n"
             + "and p.height >= :height")
     List<Player> findPlayers(String teamId, String familyName, String height);
+
+    @Query(value = "select p.playerName \n"
+            + "from Player p \n"
+            + "where p.teamId like :teamId \n"
+            + "and p.playerName like :#{#paramPlayer.familyName}% \n"
+            + "and p.height >= :#{#paramPlayer.height}")
+    List<Player> findPlayers(@Param(value = "paramPlayer") Player player, @Param(value = "paramPlayer") String teamId);
 
 }
 @Repository

@@ -19,9 +19,8 @@ import org.springframework.stereotype.Repository;
  * * 2022-05-19      Kwonsolyi    수정
  */
 interface StadiumCustomRepository{
-    void update(Stadium stadium);
     // 스타디움 전화번호 tel 을 변경하도록 하시오
-    @Query(value = "update stardium s set s.tel where s.stadiumNo = :stadiumNo",
+    @Query(value = "update Stardium s set s.tel where s.stadiumNo = :stadiumNo",
             nativeQuery = true)
     int update(@Param("tel") String tel);
 

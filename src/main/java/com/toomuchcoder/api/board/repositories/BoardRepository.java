@@ -4,6 +4,8 @@ import com.toomuchcoder.api.board.domains.Article;
 import com.toomuchcoder.api.board.domains.Board;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -20,7 +22,10 @@ import java.util.List;
  **/
 
 interface BoardCustomRepository{
-    void update(Board board);
+    // 000. 게시판 이름 boardName 을 변경하시오
+    @Query(value="update Board b set b.boardName = :boardName where b.boardId = :boardId",
+            nativeQuery = true)
+    int update(@Param("boardName") String boardName);
 }
 public interface BoardRepository extends JpaRepository<Board,Long> {
 

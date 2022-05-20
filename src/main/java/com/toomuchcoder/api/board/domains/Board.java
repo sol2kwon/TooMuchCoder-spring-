@@ -33,8 +33,7 @@ import java.util.List;
 public class Board {
     @Id
     @Column(name = "board_id")
-    @GeneratedValue
-    private long boardId;
+    @GeneratedValue private long boardId;
     @Column private @NotNull
     String boardName;
     @Column(name = "create_date") @NotNull private String create_date;
