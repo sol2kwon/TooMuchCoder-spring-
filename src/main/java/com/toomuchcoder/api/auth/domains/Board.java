@@ -40,6 +40,8 @@ public class Board {
     String boardName;
     @Column(name = "create_date") @NotNull private String create_date;
 
+    @OneToMany(mappedBy = "board")
+    List<Article> articles =new ArrayList<>();
 
 
 

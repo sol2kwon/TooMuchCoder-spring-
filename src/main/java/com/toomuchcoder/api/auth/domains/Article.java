@@ -42,5 +42,11 @@ public class Article {
             @JoinColumn(name = "user_id")
     User user;
 
+    @ManyToOne
+        @JoinColumn (name = "board_id")
+    Board board;
+
+
+
 
 }

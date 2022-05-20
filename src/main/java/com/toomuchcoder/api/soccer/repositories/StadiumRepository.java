@@ -16,6 +16,10 @@ import org.springframework.stereotype.Repository;
  * 2022-05-09      JeongmyoengHong     최초 생성
  * * 2022-05-19      Kwonsolyi    수정
  */
+interface StadiumCustomRepository{
+    void update(Stadium Team);
+}
 @Repository
-public interface StadiumRepository extends JpaRepository<Stadium, Long> {
+public interface StadiumRepository extends JpaRepository<Stadium, Long>,StadiumCustomRepository {
+
 }
