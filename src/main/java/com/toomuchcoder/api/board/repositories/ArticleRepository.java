@@ -1,6 +1,4 @@
 package com.toomuchcoder.api.board.repositories;
-
-
 import com.toomuchcoder.api.board.domains.Article;
 import com.toomuchcoder.api.soccer.domains.Player;
 import org.springframework.data.jpa.repository.JpaRepository;

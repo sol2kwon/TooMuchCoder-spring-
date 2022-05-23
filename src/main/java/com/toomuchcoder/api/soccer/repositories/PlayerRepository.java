@@ -43,12 +43,14 @@ interface PlayerCustomRepository{
 
     // 005. 수원팀에서 성이 고씨이고 키가 170 이상인 선수를 출력하시오.
     // 단 수원팀 ID는 K02 입니다.
+    /**
     @Query(value = "select p.playerName \n"
             + "from Player p \n"
             + "where p.teamId like :teamId \n"
             + "and p.playerName like :familyName \n"
             + "and p.height >= :height")
     List<Player> findPlayers(String teamId, String familyName, String height);
+     */
 
     @Query(value = "select p.playerName \n"
             + "from Player p \n"
