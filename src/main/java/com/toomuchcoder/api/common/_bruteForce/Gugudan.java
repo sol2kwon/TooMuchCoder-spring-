@@ -1,4 +1,4 @@
-package com.toomuchcoder.api.common.algorithm;
+package com.toomuchcoder.api.common._bruteForce;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

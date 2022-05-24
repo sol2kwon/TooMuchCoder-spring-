@@ -1,4 +1,4 @@
-package com.toomuchcoder.api.common.algorithm;
+package com.toomuchcoder.api.common._bruteForce;
 
 import java.util.Scanner;
 

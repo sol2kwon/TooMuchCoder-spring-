@@ -1,15 +1,10 @@
-package com.toomuchcoder.api.common.algorithm;
+package com.toomuchcoder.api.common._bruteForce;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import net.minidev.json.JSONUtil;
 import org.junit.jupiter.api.Test;
-import org.w3c.dom.ls.LSOutput;
-
-import java.util.Arrays;
-import java.util.List;
 
 import static java.lang.Math.min;
 

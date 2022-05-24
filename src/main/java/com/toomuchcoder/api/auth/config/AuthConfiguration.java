@@ -22,9 +22,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 public class AuthConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring()
-                .antMatchers(HttpMethod.OPTIONS,"*/**")
-                .antMatchers("/");//첫번째 화면은 누구든지 볼 수 있게 한다.
+       // web.ignoring().antMatchers(HttpMethod.OPTIONS,"*/**").antMatchers("/");//첫번째 화면은 누구든지 볼 수 있게 한다.
     }
     @Override
     public void configure(HttpSecurity http) throws Exception {

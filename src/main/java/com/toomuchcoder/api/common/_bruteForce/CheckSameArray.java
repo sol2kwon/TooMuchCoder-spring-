@@ -1,4 +1,4 @@
-package com.toomuchcoder.api.common.algorithm;
+package com.toomuchcoder.api.common._bruteForce;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,40 +6,34 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
 /**
  * packageName: com.toomuchcoder.api.common.algorithm
- * fileName        : PrimeNumber.java
+ * fileName        : CheckSameArray.java
  * author          : solyikwon
- * date            : 2022-05-17
+ * date            : 2022-05-18
  * desc            :
  * =============================================
  * DATE              AUTHOR        NOTE
  * =============================================
- * 2022-05-17         solyikwon      최초 생성
+ * 2022-05-18         solyikwon      최초 생성
  **/
-public class PrimeNumber {
+public class CheckSameArray {
     @Getter @Builder @NoArgsConstructor @AllArgsConstructor
     public static class Solution{
-        protected int [] primes;
-        private int start,end;
+        private String result;
 
         @Override
         public String toString(){
-            return null;
+            return String.format("A 배열과 B 배열 %s",result);
         }
     }
     @FunctionalInterface private interface SolutionService{
-        String solution(List<Integer> list);
+        Solution solution(Solution s);
+
     }
     @Test
     void testSolutionTest(){
 
-
     }
-    }
-
-
-
+}
 
