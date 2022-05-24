@@ -1,6 +1,7 @@
-package com.toomuchcoder.api.security.domain;
+package com.toomuchcoder.api.auth.domain;
 
-import com.toomuchcoder.api.auth.domains.Role;
+import com.toomuchcoder.api.user.domains.Role;
+import com.toomuchcoder.api.auth.services.AuthServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,8 +30,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @Log //아이피 다 찍어야함
 //프로바이더는 AOP가 제공하는
-public class SecurityProvider implements AuthenticationProvider {
-    private final UserDetailsServiceImpl service;
+public class AuthProvider implements AuthenticationProvider {
+    private final AuthServiceImpl service;
 
     @Value("${security.jwt.token.security-key:secret-key}")
     private String securitykey;

@@ -1,9 +1,8 @@
-package com.toomuchcoder.api.auth.domains;
+package com.toomuchcoder.api.user.domains;
 
 import com.sun.istack.NotNull;
 import com.toomuchcoder.api.board.domains.Article;
 import lombok.*;
-import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -24,7 +23,6 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Component
 @Entity
 @Table(name="users")
 public class User {
@@ -35,11 +33,12 @@ public class User {
     @Column private @NotNull String password;
     @Column private @NotNull String name;
     @Column private @NotNull String email;
-    @Column(name = "reg_date") @NotNull
-    private String regDate;
+    @Column(name = "reg_date") @NotNull private String regDate;
 
     @OneToMany(mappedBy = "user")
     List<Article>articles = new ArrayList<>();
+    @ElementCollection(fetch = FetchType.EAGER)
+    public List<Role>roles;
 
 
 

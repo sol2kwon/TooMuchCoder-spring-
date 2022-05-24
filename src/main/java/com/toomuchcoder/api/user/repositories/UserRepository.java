@@ -1,11 +1,13 @@
-package com.toomuchcoder.api.auth.repositories;
+package com.toomuchcoder.api.user.repositories;
 
-import com.toomuchcoder.api.auth.domains.User;
+import com.toomuchcoder.api.user.domains.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
 
 /**
  * packageName: repositories
@@ -32,5 +34,6 @@ interface UserCustomRepository{
 
 @Repository
 public interface UserRepository extends JpaRepository<User,Long>{
+    Optional<User> findByUsername(String username);
 
 }

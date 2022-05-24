@@ -1,12 +1,12 @@
-package com.toomuchcoder.api.auth.controllers;
+package com.toomuchcoder.api.user.controllers;
 
-import com.toomuchcoder.api.auth.domains.User;
+import com.toomuchcoder.api.user.domains.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.data.domain.Pageable;
-import com.toomuchcoder.api.auth.services.UserService;
+import com.toomuchcoder.api.user.services.UserService;
 
 
 import java.util.List;

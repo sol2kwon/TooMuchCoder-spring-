@@ -1,7 +1,6 @@
 package com.toomuchcoder.api.board.controllers;
 
 
-import com.toomuchcoder.api.auth.domains.User;
 import com.toomuchcoder.api.board.domains.Article;
 import com.toomuchcoder.api.board.services.ArticleService;
 import lombok.RequiredArgsConstructor;

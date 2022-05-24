@@ -1,8 +1,7 @@
-package com.toomuchcoder.api.security.config;
+package com.toomuchcoder.api.auth.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -20,7 +19,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
  * 2022-05-23         solyikwon      최초 생성
  **/
 @Configuration
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+public class AuthConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring()

@@ -1,4 +1,4 @@
-package com.toomuchcoder.api.auth.domains;
+package com.toomuchcoder.api.user.domains;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

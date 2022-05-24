@@ -1,8 +1,5 @@
 package com.toomuchcoder.api.soccer.repositories;
 
-import com.toomuchcoder.api.auth.domains.User;
-
-import com.toomuchcoder.api.soccer.domains.Stadium;
 import com.toomuchcoder.api.soccer.domains.Team;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
