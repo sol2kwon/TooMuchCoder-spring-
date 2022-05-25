@@ -25,6 +25,7 @@ public class Bmi {
     public static class Solution{
 
 
+
         public String toString(){
             return String.format(" ");
         }
