@@ -20,8 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static com.toomuchcoder.api.common.lambdas.Lambda.longParse;
-import static com.toomuchcoder.api.common.lambdas.Lambda.string;
+import static com.toomuchcoder.api.common.lambdas.Lambda.*;
 
 /**
  * packageName: services
@@ -76,12 +75,17 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public Messenger save(User user) {
+    public Messenger save(UserDTO user) {
         String result = "";
         if (repository.findByUsername(user.getUsername()).isEmpty()){
             List<Role> list = new ArrayList<>();
             list.add(Role.USER);
-            repository.save(User.builder().password(encoder.encode(user.getPassword()))
+            repository.save(User.builder()
+                            .username(user.getUsername())
+                            .email(user.getEmail())
+                            .name(user.getName())
+                    .regDate(user.getRegDate())
+                    .password(encoder.encode(user.getPassword()))
                     .roles(list).build());
            result = "SUCCESS";
         }else{

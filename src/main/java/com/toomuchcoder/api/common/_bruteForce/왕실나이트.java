@@ -21,7 +21,7 @@ public class 왕실나이트 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

@@ -22,7 +22,7 @@ public class 입국심사 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

@@ -25,6 +25,8 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name="users")
+@Setter
+@ToString
 public class User {
     @Id
     @Column(name = "user_id")

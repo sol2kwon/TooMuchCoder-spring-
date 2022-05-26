@@ -19,7 +19,7 @@ import org.junit.jupiter.api.Test;
 public class 큰수만들기 {
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

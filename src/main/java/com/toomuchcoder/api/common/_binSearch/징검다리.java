@@ -22,7 +22,7 @@ public class 징검다리 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

@@ -22,7 +22,7 @@ public class 음료수얼려먹기 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

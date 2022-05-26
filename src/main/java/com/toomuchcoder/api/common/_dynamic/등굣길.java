@@ -22,7 +22,7 @@ public class 등굣길 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

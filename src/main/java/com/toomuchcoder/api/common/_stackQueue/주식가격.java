@@ -22,7 +22,7 @@ public class 주식가격 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

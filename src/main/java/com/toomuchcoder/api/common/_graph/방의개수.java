@@ -22,7 +22,7 @@ public class 방의개수 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

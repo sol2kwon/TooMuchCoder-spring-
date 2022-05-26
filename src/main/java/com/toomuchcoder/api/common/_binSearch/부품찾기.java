@@ -22,7 +22,7 @@ public class 부품찾기 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

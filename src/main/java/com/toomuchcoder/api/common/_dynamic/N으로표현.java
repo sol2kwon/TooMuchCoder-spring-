@@ -22,7 +22,7 @@ public class N으로표현 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

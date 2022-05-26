@@ -1,10 +1,7 @@
 package com.toomuchcoder.api.common._heap;
 
 import com.toomuchcoder.api.common._bruteForce.ATM;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -22,7 +19,8 @@ public class 디스크컨트롤러 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
+
     public static class Solution{
 
 

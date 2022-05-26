@@ -22,7 +22,7 @@ public class 여행경로 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

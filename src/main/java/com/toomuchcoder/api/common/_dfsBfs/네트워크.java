@@ -22,7 +22,7 @@ public class 네트워크 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

@@ -22,7 +22,7 @@ public class 이중우선순위큐 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

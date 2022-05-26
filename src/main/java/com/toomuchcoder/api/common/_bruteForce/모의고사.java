@@ -21,7 +21,7 @@ public class 모의고사 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

@@ -22,7 +22,7 @@ public class 더맵게 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

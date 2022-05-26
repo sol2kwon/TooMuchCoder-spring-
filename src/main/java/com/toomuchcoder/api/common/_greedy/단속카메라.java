@@ -22,7 +22,7 @@ public class 단속카메라 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

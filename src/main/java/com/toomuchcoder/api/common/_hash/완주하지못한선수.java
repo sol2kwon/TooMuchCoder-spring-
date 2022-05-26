@@ -20,7 +20,7 @@ import org.junit.jupiter.api.Test;
 public class 완주하지못한선수 {
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

@@ -1,7 +1,14 @@
 package com.toomuchcoder.api.common.lambdas;
 
+import com.toomuchcoder.api.ApiApplication;
+import lombok.Data;
+import org.springframework.boot.SpringApplication;
+
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.function.*;
 
 import static com.toomuchcoder.api.common.dataStructure.AppleApp.Apple;
@@ -80,6 +87,25 @@ public class Lambda {
         Function<String,File>f= File::new;
         return f.apply(a);
     }
+/**
+    public static String date(){
+        Supplier<Date> f= Date :: new;
+        return String.valueOf(f.get()) ;
+    }
 
+    public static String a(){
+        Supplier<String> f =()-> string(new Date());
+        return f.get();
+    }
+
+
+    public static String c(){
+        Supplier<String> f = () -> string(new SimpleDateFormat("YYY-MM-dd").format(new Date()));
+        return f.get();
+    }*/
+    public static String date(){
+        Supplier<String> f = () -> string(LocalDate.now());
+        return f.get();
+}
 }
 

@@ -22,7 +22,7 @@ public class 단어변환 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

@@ -22,7 +22,7 @@ public class 커리큘럼 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

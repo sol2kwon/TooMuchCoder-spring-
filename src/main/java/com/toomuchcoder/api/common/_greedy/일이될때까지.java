@@ -19,7 +19,7 @@ import org.junit.jupiter.api.Test;
 public class 일이될때까지 {
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

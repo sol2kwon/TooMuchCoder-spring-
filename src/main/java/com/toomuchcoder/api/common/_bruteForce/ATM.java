@@ -49,7 +49,7 @@ public class ATM {
         @Builder
         @Getter
         @NoArgsConstructor
-        @AllArgsConstructor
+
         public static class Solution{
 
 

@@ -22,7 +22,7 @@ public class 바닥공사 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 
@@ -32,7 +32,7 @@ public class 바닥공사 {
 
     }
     @FunctionalInterface private interface ISolution{
-        ATM.Solution solution (ATM.Solution s);
+        Solution solution (ATM.Solution s);
     }
     @Test
     void testSolution(){

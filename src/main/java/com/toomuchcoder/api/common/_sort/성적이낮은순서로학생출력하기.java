@@ -22,7 +22,7 @@ public class 성적이낮은순서로학생출력하기 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

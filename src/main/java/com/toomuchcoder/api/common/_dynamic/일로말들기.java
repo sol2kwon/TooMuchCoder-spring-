@@ -22,7 +22,7 @@ public class 일로말들기 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

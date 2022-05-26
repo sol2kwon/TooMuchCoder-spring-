@@ -22,7 +22,7 @@ public class 효율적인화폐구성 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

@@ -22,7 +22,7 @@ public class 가장먼노드 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

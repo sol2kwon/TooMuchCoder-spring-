@@ -57,7 +57,7 @@ import org.junit.jupiter.api.Test;
 public class 회의실배정 {
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

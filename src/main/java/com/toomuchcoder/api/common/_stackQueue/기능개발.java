@@ -22,7 +22,7 @@ public class 기능개발 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

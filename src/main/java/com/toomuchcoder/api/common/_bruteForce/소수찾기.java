@@ -20,7 +20,7 @@ import java.util.List;
  * 2022-05-17         solyikwon      최초 생성
  **/
 public class 소수찾기 {
-    @Builder @Getter @AllArgsConstructor @NoArgsConstructor
+    @Builder @Getter @AllArgsConstructor
     static class Solution{
         @Override public String toString(){
             int a;

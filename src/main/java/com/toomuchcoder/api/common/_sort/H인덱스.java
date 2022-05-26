@@ -22,7 +22,7 @@ public class H인덱스 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

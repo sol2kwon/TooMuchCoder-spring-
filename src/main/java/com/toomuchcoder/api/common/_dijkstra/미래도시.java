@@ -22,7 +22,7 @@ public class 미래도시 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

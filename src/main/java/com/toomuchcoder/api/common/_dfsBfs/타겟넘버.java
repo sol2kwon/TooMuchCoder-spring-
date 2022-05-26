@@ -22,7 +22,7 @@ public class 타겟넘버 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

@@ -18,11 +18,12 @@ import org.junit.jupiter.api.Test;
  * =============================================
  * 2022-05-25         solyikwon      최초 생성
  **/
+
 public class 떡볶이떡만들기 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 
@@ -32,7 +33,7 @@ public class 떡볶이떡만들기 {
 
     }
     @FunctionalInterface private interface ISolution{
-        ATM.Solution solution (ATM.Solution s);
+       Solution solution (Solution s);
     }
     @Test
     void testSolution(){

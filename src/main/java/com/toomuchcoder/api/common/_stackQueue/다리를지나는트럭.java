@@ -22,7 +22,7 @@ public class 다리를지나는트럭 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

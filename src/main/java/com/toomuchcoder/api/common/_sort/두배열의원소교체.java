@@ -22,7 +22,7 @@ public class 두배열의원소교체 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

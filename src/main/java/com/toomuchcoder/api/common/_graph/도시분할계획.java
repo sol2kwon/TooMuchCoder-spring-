@@ -22,7 +22,7 @@ public class 도시분할계획 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

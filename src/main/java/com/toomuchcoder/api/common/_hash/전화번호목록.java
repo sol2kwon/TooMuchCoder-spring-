@@ -20,7 +20,7 @@ import org.junit.jupiter.api.Test;
 public class 전화번호목록 {
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

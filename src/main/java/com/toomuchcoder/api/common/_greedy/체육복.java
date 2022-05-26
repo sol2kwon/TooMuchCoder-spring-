@@ -19,7 +19,7 @@ import org.junit.jupiter.api.Test;
 public class 체육복 {
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

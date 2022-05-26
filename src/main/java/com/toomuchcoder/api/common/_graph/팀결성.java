@@ -22,7 +22,7 @@ public class 팀결성 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

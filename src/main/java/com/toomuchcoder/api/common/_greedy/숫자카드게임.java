@@ -22,7 +22,7 @@ public class 숫자카드게임 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

@@ -19,7 +19,7 @@ import org.junit.jupiter.api.Test;
 public class 큰수의법칙 {
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

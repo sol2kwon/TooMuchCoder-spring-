@@ -21,7 +21,7 @@ public class 게임개발 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

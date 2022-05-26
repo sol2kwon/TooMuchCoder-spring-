@@ -22,7 +22,7 @@ public class 미로탈출 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

@@ -22,7 +22,7 @@ public class 정수삼각형 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

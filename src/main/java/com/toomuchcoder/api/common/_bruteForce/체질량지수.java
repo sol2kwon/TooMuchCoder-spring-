@@ -21,7 +21,7 @@ public class 체질량지수 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

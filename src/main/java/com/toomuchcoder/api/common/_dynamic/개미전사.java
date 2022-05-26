@@ -22,7 +22,7 @@ public class 개미전사 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 

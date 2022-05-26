@@ -20,7 +20,7 @@ import org.junit.jupiter.api.Test;
 public class 베스트앨범 {
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
     public static class Solution{
 
 
