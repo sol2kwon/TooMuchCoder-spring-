@@ -44,8 +44,8 @@ public class UserController {
             @ApiResponse(code = 400, message = "Something Wrong"),
             @ApiResponse(code = 422, message = "유효하지 않은 아이디/비밀번호")
     })
-    public ResponseEntity<UserDTO> login(@RequestBody UserDTO user){
-        return ResponseEntity.ok(service.login(modelMapper.map(user,User.class)));
+    public ResponseEntity<UserDTO> login(@ApiParam("Login User") @RequestBody UserDTO user){
+        return ResponseEntity.ok(service.login(user));
     }
 
     @PostMapping("/logout")

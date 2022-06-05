@@ -39,7 +39,12 @@ public interface UserService {
 
     Messenger existsById(String userid);
 
-    UserDTO login(User user);
+    UserDTO login(UserDTO paramUser);
 
     Messenger update(User user);
+
+    List<User> findByUserName(String name);
+
+    Messenger logout();
+
 }

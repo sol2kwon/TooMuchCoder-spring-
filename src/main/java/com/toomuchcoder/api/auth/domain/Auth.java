@@ -41,7 +41,6 @@ public class Auth implements UserDetails {
 
     private  final Collection<? extends GrantedAuthority> authorities;
 
-
     @Override
     public boolean isAccountNonExpired() {
         return false;

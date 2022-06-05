@@ -34,6 +34,8 @@ public class LambdaTest {
         Supplier<String> f = () -> string(new SimpleDateFormat("YYYY-MM-dd").format(new Date()));
         return f.get();
     }
+
+
     @Test
     public void testSolution(){
         System.out.println(date());
