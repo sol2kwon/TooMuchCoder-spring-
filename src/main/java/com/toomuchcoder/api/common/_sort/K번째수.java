@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -48,20 +49,23 @@ public class K번째수 {
     @AllArgsConstructor
 
     public static class Solution{
-      
-
-
+        private int [] array;
+        private int[][] commands;
+        private int i,j,k;
 
         public String toString(){
-            return String.format(" ");
+
+            return String.format("array: %s\n" + "commands: %s");
         }
 
     }
     @FunctionalInterface private interface ISolution{
-        ATM.Solution solution (Solution s);
+        Solution solution (Solution s);
     }
     @Test
     void testSolution(){
+        int[] array = {1, 5, 2, 6, 3, 7, 4};
+
 
 
 
