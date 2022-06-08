@@ -18,10 +18,7 @@ import org.junit.jupiter.api.Test;
  * 2022-05-25         solyikwon      최초 생성
  **/
 public class 최대최소값 {
-    @Builder
-    @Getter
-    @AllArgsConstructor
-    @NoArgsConstructor
+    @Builder @Getter @AllArgsConstructor @NoArgsConstructor
     public static class Solution{
         private int[] arr;
         private int max, min;
@@ -34,17 +31,27 @@ public class 최대최소값 {
     public interface SolutionService {
         Solution solution(Solution s);
     }
+    class Service {
+        Solution test(Solution s){
+            SolutionService f = e ->{
+                int min = 10;//???지금은 최대값 알기 때문에 가능..
+                for(int i : e.getArr()){
+                    if(i < min) min = i;
+                }
+                int max = min;
+                    for (int i : e.getArr()){
+                        if (i>max) max = i;
+                    }
+                return Solution.builder().min(min).max(max).build();
+            };
+            return f.solution(s);
+        }
+    }
     @Test
     void testSolution(){
         int[] arr = {3, 1, 9, 5, 10};
-        SolutionService f = e ->{
-            int min = 10;
-            for(int i : e.getArr()){
-                if(i < min) min = i;
-            }
-            return Solution.builder().min(min).build();
-        };
         Solution s = Solution.builder().arr(arr).build();
-        System.out.println(f.solution(s));
+        Service s2 = new Service();
+        System.out.println(s2.test(s));
     }
 }

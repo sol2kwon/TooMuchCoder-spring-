@@ -62,6 +62,11 @@ public class K번째수 {
     @FunctionalInterface private interface ISolution{
         Solution solution (Solution s);
     }
+
+    static class Service {
+
+    }
+
     @Test
     void testSolution(){
         int[] array = {1, 5, 2, 6, 3, 7, 4};

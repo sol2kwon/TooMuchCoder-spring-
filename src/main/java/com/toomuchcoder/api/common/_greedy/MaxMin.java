@@ -1,4 +1,4 @@
-package com.toomuchcoder.api.common._bruteForce;
+package com.toomuchcoder.api.common._greedy;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,7 +26,7 @@ public class MaxMin {
     @AllArgsConstructor
     public static class Solution {
         protected int [] arr;
-        private int max, min, elem;
+        private int max, min;
 
         @Override
         public String toString() {
@@ -35,7 +35,8 @@ public class MaxMin {
             }
         }
 
-        @FunctionalInterface private interface SolutionService {
+        @FunctionalInterface
+        private interface SolutionService {
         Solution solution(Solution s);
         }
 
@@ -43,7 +44,7 @@ public class MaxMin {
         void testSolutionTest() {
           int [] arr = {3,1,9,5,10};
             SolutionService f = e -> {
-           int max = 0;
+           int max = 0;//음수가 없다는 정의하에 0부터 시작한다.
            for (int i : e.getArr()){
                if (i>max) max = i ;
            }
