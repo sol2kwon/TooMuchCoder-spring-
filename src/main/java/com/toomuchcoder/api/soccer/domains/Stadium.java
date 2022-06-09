@@ -19,7 +19,7 @@ import java.util.List;
  * 2022-05-09      JeongmyoengHong     최초 생성
  *  * 2022-05-19      Kwonsolyi    수정
  */
-@Builder @Getter @AllArgsConstructor @NoArgsConstructor
+@Getter @AllArgsConstructor @NoArgsConstructor
 @Component
 @Entity
 @Table(name = "stadiums")

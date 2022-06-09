@@ -1,6 +1,6 @@
 package com.toomuchcoder.api.common._sort;
 
-import com.toomuchcoder.api.common._bruteForce.ATM;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -51,27 +51,22 @@ public class K번째수 {
     public static class Solution{
         private int [] array;
         private int[][] commands;
-        private int i,j,k;
+        private int start,end,k;
 
         public String toString(){
 
-            return String.format("array: %s\n" + "commands: %s");
+            return String.format("array: %s\n" + "commands: %s\n","start: %s\n","end: %s\n","value: %s\n",array,commands,start,end,k);
         }
 
     }
-    @FunctionalInterface private interface ISolution{
+    @FunctionalInterface
+    private interface SolutionService{
         Solution solution (Solution s);
     }
 
-    static class Service {
-
-    }
 
     @Test
     void testSolution(){
-        int[] array = {1, 5, 2, 6, 3, 7, 4};
-
-
 
 
     }
