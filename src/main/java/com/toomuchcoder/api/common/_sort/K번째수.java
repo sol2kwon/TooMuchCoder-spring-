@@ -1,12 +1,14 @@
 package com.toomuchcoder.api.common._sort;
 
 
+import com.toomuchcoder.api.common._greedy.최대최소값;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Test;
 
+import javax.sound.midi.Soundbank;
 import java.util.Arrays;
 import java.util.List;
 
@@ -42,32 +44,44 @@ import java.util.List;
  * =============================================
  * 2022-05-25         solyikwon      최초 생성
  **/
+
 public class K번째수 {
     @Builder
     @Getter
     @NoArgsConstructor
     @AllArgsConstructor
 
-    public static class Solution{
-        private int [] array;
+    public static class Solution {
+        private int[] arr;
         private int[][] commands;
-        private int start,end,k;
+        private int[] answer;
 
-        public String toString(){
-
-            return String.format("array: %s\n" + "commands: %s\n","start: %s\n","end: %s\n","value: %s\n",array,commands,start,end,k);
-        }
 
     }
+
     @FunctionalInterface
-    private interface SolutionService{
-        Solution solution (Solution s);
+    private interface SolutionService {
+        Solution solution(Solution s);
     }
-
+    class Service {
+        Solution test(Solution s){
+            SolutionService f = e -> {
+                return null;
+            };
+            return f.solution(s);
+        }
+    }
 
     @Test
-    void testSolution(){
+    void testSolution() {
+        int[] arr = {1, 5, 2, 6, 3, 7, 4};
+        Solution s = Solution.builder().arr(arr).build();
+        Service s1 = new Service();
+        System.out.println(s1.test(s));
 
 
     }
 }
+
+
+
