@@ -2,6 +2,9 @@ package com.toomuchcoder.api;
 
 
 
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.Year;
 import java.util.Arrays;
 
 /**
@@ -17,11 +20,6 @@ import java.util.Arrays;
  **/
 public class Test1 {
     public static void main(String[] args) {
-        int[] arr = {1,5,2,6,3,7,4};
-
-
-         int[] a = Arrays.copyOfRange(arr,arr[2],arr[5]);
-
 
     }
 
