@@ -44,7 +44,7 @@ public class 가장큰수 {
 
     }
     @FunctionalInterface private interface ISolution{
-        ATM.Solution solution (ATM.Solution s);
+        Solution solution (Solution s);
     }
     @Test
     void testSolution(){
