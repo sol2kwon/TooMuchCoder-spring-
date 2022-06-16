@@ -30,6 +30,7 @@ import java.util.Random;
  * 1   4   6   9   10   3   11   2   13   15
  * 1   4   6   9   3   10   2   11   13   15
  * 2차 버블 정렬이 끝나면 가장 큰 수인 13의 정렬이 확정됩니다. 이러한 방식으로 1차, 2차, 3차 . . . 반복하여 정렬하는 방식이 버블 정렬입니다.
+ * https://devbirdfeet.tistory.com/99?category=845027
  * =============================================
  * DATE              AUTHOR        NOTE
  * =============================================
@@ -45,39 +46,38 @@ public class 버블정렬 {
         private int temp;
 
         public String toString() {
-            return String.format(Arrays.toString(array));
+            return Arrays.toString(array);
         }
     }
 
     @FunctionalInterface
     private interface SolutionService {
-        Solution solution(Solution s);
+        Solution solutionServiceApply(Solution solutionParam);
     }
 
     class Service {
-        Solution test(Solution s) {
+        Solution test(Solution solutionParamTest) {
             SolutionService f = e -> {
                 for (int i = 0; i < e.array.length; i++) {
-                    for (int j = 0; j < 9 - i; j++) {
+                    for (int j = 0; j < 9-i; j++) {
                         if (e.array[j] > e.array[j + 1]) {
                             e.temp = e.array[j];
-                            e.array[j] = e.array[j + i];
-                            e.array[j + i] = e.temp;
+                            e.array[j] = e.array[j + 1];
+                            e.array[j + 1] = e.temp;
                         }
                     }
                 }
                 return Solution.builder().array(e.array).build();
             };
-            return f.solution(s);
+            return f.solutionServiceApply(solutionParamTest);
         }
     }
-
-        @Test
-        void testSolution() {
-            int[] arr = {1, 9, 4, 6, 11, 10, 3, 15, 2, 13};
-            Solution s = Solution.builder().array(arr).build();
-            Service s2 = new Service();
-            System.out.println(s2.test(s));
-        }
+    @Test
+    void testSolution() {
+        int[] arr = {1, 9, 4, 6, 11, 10, 3, 15, 2, 13};
+        Solution solutionInstance = Solution.builder().array(arr).build();
+        Service serviceInstance = new Service();
+        System.out.println(serviceInstance.test(solutionInstance));
     }
+}
 
