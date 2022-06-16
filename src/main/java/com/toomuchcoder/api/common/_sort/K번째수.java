@@ -55,14 +55,12 @@ public class K번째수 {
         private int[] arr;
         private int[][] commands;
         private int[] answer;
-
-
     }
-
     @FunctionalInterface
     private interface SolutionService {
         Solution solution(Solution s);
     }
+
     class Service {
         Solution test(Solution s){
             SolutionService f = e -> {

@@ -78,6 +78,7 @@ public class 버블정렬 {
         Solution solutionInstance = Solution.builder().array(arr).build();
         Service serviceInstance = new Service();
         System.out.println(serviceInstance.test(solutionInstance));
+
     }
 }
 

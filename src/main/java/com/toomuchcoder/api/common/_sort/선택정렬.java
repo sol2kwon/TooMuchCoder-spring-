@@ -55,7 +55,7 @@ public class 선택정렬 {
     }
     @Test
     void testSolution() {
-            int [] arr = {7,5,2};
+            int [] arr = {7,5,2,9,10,11,15};
             Solution s = Solution.builder().array(arr).build();
             Service s2 = new Service();
         System.out.println(s2.test(s));

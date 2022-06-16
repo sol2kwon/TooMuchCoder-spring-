@@ -1,9 +1,6 @@
 package com.toomuchcoder.api.common._sort;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;
@@ -20,41 +17,37 @@ import java.util.Random;
  * 2022-05-24         solyikwon      최초 생성
  **/
 public class 삽입정렬 {
-    @Data
+    @Builder
+    @Getter
+    @NoArgsConstructor
     @AllArgsConstructor
     static class Solution{
-
-        @Override public String toString(){
-            Random random = new Random();
-            int[] arr = new int[100];
-            for(int i = 1; i < arr.length; i++) {
-                // 타겟 넘버
-                int target = arr[i];
-
-                int j = i - 1;
-
-                // 타겟이 이전 원소보다 크기 전 까지 반복
-                while(j >= 0 && target < arr[j]) {
-                    arr[j + 1] = arr[j];   // 이전 원소를 한 칸씩 뒤로 미룬다.
-                    j--;
-                }
-
-                /*
-                 * 위 반복문에서 탈출 하는 경우 앞의 원소가 타겟보다 작다는 의미이므로
-                 * 타겟 원소는 j번째 원소 뒤에 와야한다.
-                 * 그러므로 타겟은 j + 1 에 위치하게 된다.
-                 */
-                arr[j + 1] = target;
-            }
-
-            return "";
-        }
+        private int[] arr;
+        private int a;
+        private String h;
+        public String toString(){return null;}
     }
-    @FunctionalInterface interface SolutionService {
+
+    @FunctionalInterface
+    private interface SolutionService {
         Solution solution(Solution s);
+    }
+
+    class Service{
+        SolutionService f = e ->{return null;};
+
+        Solution test(Solution a){
+            return f.solution(a);
+        }
     }
     @Test
     void testSolution(){
+        int[] arr = {1,3,11,2};
+        int a = 5;
+        String h = "p";
+        Solution c = Solution.builder().arr(arr).a(a).h(h).build();
+        Service b = new Service();
+        System.out.println(b.test(c));
 
     }
 }
