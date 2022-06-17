@@ -23,8 +23,7 @@ public class 삽입정렬 {
     @AllArgsConstructor
     static class Solution{
         private int[] arr;
-        private int a;
-        private String h;
+
         public String toString(){return null;}
     }
 
@@ -34,7 +33,14 @@ public class 삽입정렬 {
     }
 
     class Service{
-        SolutionService f = e ->{return null;};
+        SolutionService f = e ->{
+            for(int i = 1; i<e.arr.length;i++){
+                for (int j = i-1; j< e.arr.length-i; j++){
+
+                }
+            }
+
+            return null;};
 
         Solution test(Solution a){
             return f.solution(a);
@@ -43,9 +49,7 @@ public class 삽입정렬 {
     @Test
     void testSolution(){
         int[] arr = {1,3,11,2};
-        int a = 5;
-        String h = "p";
-        Solution c = Solution.builder().arr(arr).a(a).h(h).build();
+        Solution c = Solution.builder().arr(arr).build();
         Service b = new Service();
         System.out.println(b.test(c));
 

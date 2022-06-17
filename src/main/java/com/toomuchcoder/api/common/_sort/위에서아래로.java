@@ -64,12 +64,13 @@ public class 위에서아래로 {
     }
 
     class Service {
-        Solution test(Solution s) {
+
             SolutionService f = e -> {
                 Arrays.sort(e.array, Collections.reverseOrder());
                 return Solution.builder().array(e.array).build();
             };
-            return f.solution(s);
+            Solution test(Solution s) {
+                return f.solution(s);
         }
     }
 

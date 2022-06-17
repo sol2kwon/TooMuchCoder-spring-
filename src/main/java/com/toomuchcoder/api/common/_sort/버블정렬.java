@@ -56,7 +56,6 @@ public class 버블정렬 {
     }
 
     class Service {
-        Solution test(Solution solutionParamTest) {
             SolutionService f = e -> {
                 for (int i = 0; i < e.array.length; i++) {
                     for (int j = 0; j < 9-i; j++) {
@@ -69,6 +68,7 @@ public class 버블정렬 {
                 }
                 return Solution.builder().array(e.array).build();
             };
+        Solution test(Solution solutionParamTest) {
             return f.solutionServiceApply(solutionParamTest);
         }
     }
