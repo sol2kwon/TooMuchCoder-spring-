@@ -3,6 +3,7 @@ package com.toomuchcoder.api.common._sort;
 import lombok.*;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -23,8 +24,9 @@ public class 삽입정렬 {
     @AllArgsConstructor
     static class Solution{
         private int[] arr;
+        private int temp;
 
-        public String toString(){return null;}
+        public String toString(){return Arrays.toString(arr);}
     }
 
     @FunctionalInterface
@@ -35,12 +37,15 @@ public class 삽입정렬 {
     class Service{
         SolutionService f = e ->{
             for(int i = 1; i<e.arr.length;i++){
-                for (int j = i-1; j< e.arr.length-i; j++){
+                e.temp = e.arr[i];
+                for (int j = i-1; j< e.arr.length-i; j--){
+
+
 
                 }
             }
 
-            return null;};
+            return Solution.builder().arr(e.arr).build();};
 
         Solution test(Solution a){
             return f.solution(a);
