@@ -21,7 +21,7 @@ public class 합병정렬 {
     @AllArgsConstructor
     static class Solution{
         private int[] arr;
-
+        private int[] sorted;
 
         public String toString(){return null;}
     }
@@ -31,16 +31,17 @@ public class 합병정렬 {
         Solution solution(Solution a);
     }
 
+
     class Service{
         SolutionService f = e ->{
-            int [] temp = new int[e.arr.length];
-            merge_sort(e.arr,0,e.arr.length-1);
+
+            int i = e.start;
+
+
             return Solution.builder().build();
         };
 
 
-    private void merge_sort(int[] arr, int i, int i1) {
-    }
 
         Solution test(Solution a){return f.solution(a);}
     }
@@ -48,6 +49,8 @@ public class 합병정렬 {
     @Test
     void testSolution(){
         int[] arr ={29,1,10,54,11,3};
+        int[] sorted = new int [arr.length];
+
         Solution g = Solution.builder().build();
         Service h = new Service();
         System.out.println(h.test(g));

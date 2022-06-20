@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-import static com.toomuchcoder.api.common._sort.SwapMethod.swap;
-
 
 /**
  * packageName: com.toomuchcoder.api.common._sort
@@ -35,6 +33,10 @@ public class 선택정렬 {
     private interface SolutionService {
         Solution solution(Solution s);
     }
+    @FunctionalInterface
+    private interface TriConsumer {
+        void accept(int[] arr,int start,int end);
+    }
 
     class Service {
         SolutionService f = e ->{
@@ -45,7 +47,7 @@ public class 선택정렬 {
                         min=j;
                     }
                 }
-                swap(e.array,min,i);
+                this.swap(e.array,min,i);
             }
             return Solution.builder().array(e.array).build();
         };
@@ -53,6 +55,17 @@ public class 선택정렬 {
         Solution test(Solution s) {
             return f.solution(s);
         }
+
+        TriConsumer c = (arr, start, end) -> {
+            int tmp=arr[start];
+            arr[start]=arr[end];
+            arr[end]=tmp;
+        };
+
+        void swap(int[] arr,int start,int end) {
+            c.accept(arr, start, end);
+        }
+
     }
     @Test
     void testSolution() {
@@ -61,6 +74,4 @@ public class 선택정렬 {
             Service s2 = new Service();
             System.out.println(s2.test(s));
     }
-
-
 }
