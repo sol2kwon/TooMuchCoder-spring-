@@ -1,10 +1,9 @@
 package com.toomuchcoder.api.common._sort;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
 
 /**
  * packageName: com.toomuchcoder.api.common._sort
@@ -18,47 +17,35 @@ import org.junit.jupiter.api.Test;
  * 2022-05-24         solyikwon      최초 생성
  **/
 public class 퀵정렬 {
-    @Data
+    @Builder
+    @Getter
+    @NoArgsConstructor
     @AllArgsConstructor
-    static class Solution{
+    public static class Solution{
+        private int[] arr;
 
-        static void quickSort(int[] arr,int start,int end){
-            int part = partition(arr,start,end);
-            if(start <part-1) quickSort(arr,start,part-1);
-            if(end > part) quickSort(arr,start,part-1);
-
-        }
-        static int partition(int[] arr,int start,int end) {
-            int pivot=arr[(start+end)/2];
-            while(start<=end) {
-                while(arr[start]<pivot) start++;
-                while(arr[end]>pivot) end--;
-                if(start<=end) {
-                    swap(arr,start,end);
-                    start++;
-                    end--;
-                }
-            }
-            return start;
-        }
-        static void swap(int[] arr,int start,int end) {
-            int tmp=arr[start];
-            arr[start]=arr[end];
-            arr[end]=tmp;
-            return;
-        }
-
-        @Override public String toString(){
-            quickSort(null,0,10);
-            return "";
+        public String toString(){return Arrays.toString(arr);}
+    }
+    @FunctionalInterface
+    private interface SolutionService{
+        Solution solution(Solution a);
+    }
+    class Service{
+        SolutionService f = e->{
+            return Solution.builder().build();
+        };
+        Solution test(Solution a){
+            return f.solution(a);
         }
     }
-    @FunctionalInterface interface SolutionService {
-        Solution solution(Solution s);
-    }
-
     @Test
     void testSolution(){
+        int[] arr = {15,6,3,4};
+        Solution s = Solution.builder().arr(arr).build();
+        Service b = new Service();
+        System.out.println(b.test(s));
+
 
     }
+
 }

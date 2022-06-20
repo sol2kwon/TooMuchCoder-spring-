@@ -4,7 +4,7 @@ import lombok.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.Random;
+
 
 /**
  * packageName: com.toomuchcoder.api.common._sort
@@ -37,26 +37,30 @@ public class 삽입정렬 {
     class Service{
         SolutionService f = e ->{
             for(int i = 1; i<e.arr.length;i++){
-                e.temp = e.arr[i];
-                for (int j = i-1; j< e.arr.length-i; j--){
+                int target = e.arr[i];
+                int j = i - 1;
 
-
-
+                while (j >= 0 && target < e.arr[j]){
+                    e.arr[j+1] = e.arr[j];
+                    j--;
                 }
+                e.arr[j+1] = target;
             }
 
-            return Solution.builder().arr(e.arr).build();};
+            return Solution.builder().arr(e.arr).build();
+        };
 
-        Solution test(Solution a){
-            return f.solution(a);
+        Solution test(Solution s){
+            return f.solution(s);
         }
     }
+
     @Test
     void testSolution(){
-        int[] arr = {1,3,11,2};
-        Solution c = Solution.builder().arr(arr).build();
-        Service b = new Service();
-        System.out.println(b.test(c));
+        int[] arr = {39,2,5};
+        Solution s = Solution.builder().arr(arr).build();
+        Service s2 = new Service();
+        System.out.println(s2.test(s));
 
     }
 }

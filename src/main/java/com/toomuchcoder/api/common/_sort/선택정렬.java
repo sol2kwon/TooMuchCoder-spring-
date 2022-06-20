@@ -4,9 +4,9 @@ import lombok.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.Random;
 
-import static com.toomuchcoder.api.common._sort.퀵정렬.Solution.swap;
+import static com.toomuchcoder.api.common._sort.SwapMethod.swap;
+
 
 /**
  * packageName: com.toomuchcoder.api.common._sort
@@ -49,6 +49,7 @@ public class 선택정렬 {
             }
             return Solution.builder().array(e.array).build();
         };
+
         Solution test(Solution s) {
             return f.solution(s);
         }
@@ -58,7 +59,7 @@ public class 선택정렬 {
             int [] arr = {7,5,2,9,10,11,15};
             Solution s = Solution.builder().array(arr).build();
             Service s2 = new Service();
-        System.out.println(s2.test(s));
+            System.out.println(s2.test(s));
     }
 
 
