@@ -64,7 +64,6 @@ public class 위에서아래로 {
     }
 
     class Service {
-
             SolutionService f = e -> {
                 Arrays.sort(e.array, Collections.reverseOrder());
                 return Solution.builder().array(e.array).build();

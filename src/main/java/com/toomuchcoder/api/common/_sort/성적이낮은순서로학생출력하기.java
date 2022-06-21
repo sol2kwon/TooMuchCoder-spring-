@@ -32,7 +32,7 @@ public class 성적이낮은순서로학생출력하기 {
 
     }
     @FunctionalInterface private interface ISolution{
-        ATM.Solution solution (ATM.Solution s);
+        Solution solution (Solution s);
     }
     @Test
     void testSolution(){
