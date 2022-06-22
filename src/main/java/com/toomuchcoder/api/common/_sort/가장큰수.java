@@ -34,7 +34,7 @@ public class 가장큰수 {
     @Builder
     @Getter
     @NoArgsConstructor
-    @AllArgsConstructor
+
 
     public static class Solution{
 

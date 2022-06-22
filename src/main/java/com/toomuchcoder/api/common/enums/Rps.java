@@ -20,6 +20,7 @@ import java.util.function.BiFunction;
  * 2022-05-13         solyikwon      최초 생성
  **/
 public class Rps {
+    /**
     @RequiredArgsConstructor
     //
     // 파라미터 : a,b,c,f
@@ -50,5 +51,6 @@ public class Rps {
 
     }
     //수정하기 다시 내용정리
+     */
 
 }
