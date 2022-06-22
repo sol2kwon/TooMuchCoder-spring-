@@ -1,11 +1,15 @@
 package com.toomuchcoder.api.common._stackQueue;
 
-import com.toomuchcoder.api.common._bruteForce.ATM;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.PriorityQueue;
 
 /**
  * packageName: com.toomuchcoder.api.common._stackQueue
@@ -33,12 +37,6 @@ import org.junit.jupiter.api.Test;
  * priorities	        location	       return
  * [2, 1, 3, 2]     	   2	             1
  * [1, 1, 9, 1, 1, 1]	   0	             5
- * 입출력 예 설명
- * 예제 #1
- * 문제에 나온 예와 같습니다.
- *
- * 예제 #2
- * 6개의 문서(A, B, C, D, E, F)가 인쇄 대기목록에 있고 중요도가 1 1 9 1 1 1 이므로 C D E F A B 순으로 인쇄합니다.
  * =============================================
  * DATE              AUTHOR        NOTE
  * =============================================
@@ -48,20 +46,64 @@ public class 프린트 {
     @Builder
     @Getter
     @NoArgsConstructor
+    @AllArgsConstructor
 
     public static class Solution{
+        private int location;
+        private Integer[] priorities;
+        private int answer;
 
 
         public String toString(){
-            return String.format(" ");
+            return Integer.toString(answer);
         }
 
     }
-    @FunctionalInterface private interface ISolution{
-        ATM.Solution solution (ATM.Solution s);
+    @FunctionalInterface private interface SolutionService{
+        Solution solution (Solution s);
+    }
+
+    class Service{
+        SolutionService f = e->{
+            int answer = 1;
+            PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+            for(int n : e.priorities) {
+                pq.offer(n);
+            }
+            while(!pq.isEmpty()) {
+                for(int i = 0; i < e.priorities.length; i++) {
+                    if(pq.peek() == e.priorities[i]) {
+                        if(e.location == i) {
+                            e.answer = answer;
+                            return Solution.builder()
+                                    .priorities(e.priorities)
+                                    .answer(e.answer)
+                                    .location(e.location).build();
+                        }
+                        pq.poll();
+                        answer++;
+                    }
+                }
+            }
+            return Solution.builder()
+                    .priorities(e.priorities)
+                    .answer(9999)
+                    .location(e.location).build();
+        };
+        Solution test (Solution s){return f.solution(s);}
+
     }
     @Test
     void testSolution(){
+        Integer[] priorities = {1, 1, 9, 1, 1, 1};
+        int location = 0;
+
+        Service s2 = new Service();
+        Solution s = Solution.builder()
+                    .priorities(priorities)
+                    .location(location).build();
+        System.out.println(s2.test(s));
+
 
     }
 }
