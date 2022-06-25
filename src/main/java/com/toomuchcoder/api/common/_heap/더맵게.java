@@ -36,9 +36,8 @@ public class 더맵게 {
         private int[] scovilleList;
 
         public String toString(){
-            return null;//scovilleList null..
+            return null;//출력 어떻게 할까요..
         }
-
     }
     @FunctionalInterface
     private interface SolutionService{
@@ -49,28 +48,26 @@ public class 더맵게 {
         SolutionService f = e -> {
             int answer = 0;
             PriorityQueue<Integer> scovilleList = new PriorityQueue<>();
-            System.out.println(scovilleList);//확인
+            System.out.println("1"+ scovilleList+answer);//확인
             for (int i = 0; i < e.scoville.length; i++) {
                 scovilleList.add(e.scoville[i]);
-                        System.out.println(scovilleList);//확인
+                System.out.println("2"+ scovilleList+answer);//확인
             }
-            System.out.println(scovilleList);//확인//널포인트...해결하기 ㅠㅠ
+            System.out.println("3"+ scovilleList+answer);//확인
 
-            while(scovilleList.peek() < e.k) {
+            while (scovilleList.peek() < e.k) {
                 if (scovilleList.size() == 1)
                     return Solution.builder().answer(-1).build();
                 scovilleList.add(scovilleList.poll() + scovilleList.poll() * 2);
                 answer++;
             }
+            System.out.println("4"+ scovilleList+answer);//확인
             return Solution.builder().scovilleList(e.scovilleList).answer(e.answer).build();
         };
         Solution test(Solution s) {
             return f.solution(s);
         }
     }
-
-
-
         @Test
         void testSolution() {
             int[] scoville = {1, 2, 3, 9, 10, 12};
