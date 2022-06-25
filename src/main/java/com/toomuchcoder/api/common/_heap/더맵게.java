@@ -1,5 +1,6 @@
 package com.toomuchcoder.api.common._heap;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -8,6 +9,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;
+
+import static java.lang.String.valueOf;
 
 /**
  * packageName: com.toomuchcoder.api.common._heap
@@ -27,14 +30,13 @@ public class 더맵게 {
     @AllArgsConstructor
 
     public static class Solution{
-        private int [] scoville;
+        private int[] scoville;
         private int k;
         private int answer;
-        private Integer[] scovilleList;
-
+        private int[] scovilleList;
 
         public String toString(){
-            return Arrays.toString(scovilleList);
+            return null;//scovilleList null..
         }
 
     }
@@ -45,42 +47,38 @@ public class 더맵게 {
 
     class Service {
         SolutionService f = e -> {
-            PriorityQueue<Integer> scovilleList = new PriorityQueue<Integer>();
-            for (int i = 0; i < e.scoville.length; i++) {
-                scovilleList.offer(e.scoville[i]);
-            }
             int answer = 0;
-            while (scovilleList.size() > 1 && scovilleList.peek() < e.k) {
-                int min1 = scovilleList.poll();
-                int min2 = scovilleList.poll();
-
-                int mix = min1 + (min2 * 2);
-                scovilleList.offer(mix);
-                 e.answer = answer++;
-                return Solution.builder().answer(e.answer).build();
+            PriorityQueue<Integer> scovilleList = new PriorityQueue<>();
+            System.out.println(scovilleList);//확인
+            for (int i = 0; i < e.scoville.length; i++) {
+                scovilleList.add(e.scoville[i]);
+                        System.out.println(scovilleList);//확인
             }
-            if (scovilleList.size() <= 1 && scovilleList.peek() < e.k) {
-                 e.answer = answer = -1;
-                return Solution.builder().answer(e.answer).build();
+            System.out.println(scovilleList);//확인//널포인트...해결하기 ㅠㅠ
 
+            while(scovilleList.peek() < e.k) {
+                if (scovilleList.size() == 1)
+                    return Solution.builder().answer(-1).build();
+                scovilleList.add(scovilleList.poll() + scovilleList.poll() * 2);
+                answer++;
             }
-            return Solution.builder().scovilleList(e.scovilleList).build();
-
+            return Solution.builder().scovilleList(e.scovilleList).answer(e.answer).build();
         };
-
         Solution test(Solution s) {
             return f.solution(s);
         }
     }
 
+
+
         @Test
-        void testSolution(){
-            int [] scoville = {1, 2, 3, 9, 10, 12};
+        void testSolution() {
+            int[] scoville = {1, 2, 3, 9, 10, 12};
             int k = 7;
             Service s2 = new Service();
             Solution s = Solution.builder().scoville(scoville).k(k).build();
             System.out.println(s2.test(s));
 
         }
-    }
+}
 
