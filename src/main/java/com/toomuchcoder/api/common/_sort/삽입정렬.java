@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-
 /**
  * packageName: com.toomuchcoder.api.common._sort
  * fileName        : InsertionSort.java
@@ -44,9 +43,7 @@ public class 삽입정렬 {
                     e.arr[j+1] = e.arr[j];
                     j--;
                 }
-
                 e.arr[j+1] = target;
-
             }
 
             return Solution.builder().arr(e.arr).build();

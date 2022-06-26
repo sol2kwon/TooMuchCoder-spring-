@@ -66,7 +66,9 @@ public class 프린트 {
             PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
             for(int n : e.priorities) {
                 pq.offer(n);
+                System.out.println(pq);
             }
+            ;
             while(!pq.isEmpty()) {
                 for(int i = 0; i < e.priorities.length; i++) {
                     if(pq.peek() == e.priorities[i]) {
@@ -92,7 +94,7 @@ public class 프린트 {
     }
     @Test
     void testSolution(){
-        Integer[] priorities = {2, 1, 3, 2};
+        Integer[] priorities = {2, 3, 3, 2};
         int location = 2;
 
         Service s2 = new Service();
