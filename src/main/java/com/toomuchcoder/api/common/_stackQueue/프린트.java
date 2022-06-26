@@ -6,10 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 /**
  * packageName: com.toomuchcoder.api.common._stackQueue
@@ -22,7 +19,7 @@ import java.util.PriorityQueue;
  * 이 새롭게 개발한 프린터는 아래와 같은 방식으로 인쇄 작업을 수행합니다.
  * 인쇄 대기목록의 가장 앞에 있는 문서(J)를 대기목록에서 꺼냅니다.
  * 나머지 인쇄 대기목록에서 J보다 중요도가 높은 문서가 한 개라도 존재하면 J를 대기목록의 가장 마지막에 넣습니다.
- * 그렇지 않으면 J를 인쇄qwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww합니다.
+ * 그렇지 않으면 J를 인쇄합니다.
  * 예를 들어, 4개의 문서(A, B, C, D)가 순서대로 인쇄 대기목록에 있고 중요도가 2 1 3 2 라면 C D A B 순으로 인쇄하게 됩니다.
  * 내가 인쇄를 요청한 문서가 몇 번째로 인쇄되는지 알고 싶습니다. 위의 예에서 C는 1번째로, A는 3번째로 인쇄됩니다.
  * 현재 대기목록에 있는 문서의 중요도가 순서대로 담긴 배열 priorities와
@@ -55,7 +52,7 @@ public class 프린트 {
 
 
         public String toString(){
-            return Integer.toString(answer);
+            return String.format("priorities :%s  location:%d  answer: %d",Arrays.toString(priorities),location,answer);
         }
 
     }
@@ -87,7 +84,7 @@ public class 프린트 {
             }
             return Solution.builder()
                     .priorities(e.priorities)
-                    .answer(9999)
+                    .answer(9999)//이상있을시 반환..
                     .location(e.location).build();
         };
         Solution test (Solution s){return f.solution(s);}

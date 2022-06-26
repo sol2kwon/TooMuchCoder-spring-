@@ -24,7 +24,7 @@ public class 삽입정렬 {
     @AllArgsConstructor
     static class Solution{
         private int[] arr;
-        private int temp;
+
 
         public String toString(){return Arrays.toString(arr);}
     }
@@ -44,7 +44,9 @@ public class 삽입정렬 {
                     e.arr[j+1] = e.arr[j];
                     j--;
                 }
+
                 e.arr[j+1] = target;
+
             }
 
             return Solution.builder().arr(e.arr).build();
