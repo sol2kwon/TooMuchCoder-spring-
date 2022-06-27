@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -67,7 +68,8 @@ public class 기능개발 {
         private int cnt;
 
         public String toString(){
-            return String.format("기능: %d ",cnt);
+            return String.format("progresses: %s speeds:%s  기능: %d개 ",
+                                Arrays.toString(progresses),Arrays.toString(speeds),cnt);
         }
 
     }
