@@ -24,7 +24,6 @@ import static java.lang.String.valueOf;
  *  * Leo는 모든 음식의 스코빌 지수가 K 이상이 될 때까지 반복하여 섞습니다.
  *  * Leo가 가진 음식의 스코빌 지수를 담은 배열 scoville과 원하는 스코빌 지수 K가 주어질 때,
  *  * 모든 음식의 스코빌 지수를 K 이상으로 만들기 위해 섞어야 하는 최소 횟수를 return 하도록 solution 함수를 작성해주세요.
- *  *
  *  * | 제한 사항
  *  * scoville의 길이는 2 이상 1,000,000 이하입니다.
  *  * K는 0 이상 1,000,000,000 이하입니다.
@@ -90,7 +89,7 @@ public class 더맵게 {
                     return Solution.builder()
                             .scoville(e.scoville).scovilleList(e.scovilleList).answer(-1).k(e.getK()).build();
                 }
-                scovilleList.add( scovilleList.poll() + scovilleList.poll() * 2);
+                scovilleList.add( scovilleList.poll() + (scovilleList.poll() * 2));
                 answer++;
                 System.out.println("4"+ scovilleList+answer);//확인
 

@@ -94,8 +94,8 @@ public class 프린트 {
     }
     @Test
     void testSolution(){
-        Integer[] priorities = {2, 3, 3, 2};
-        int location = 2;
+        Integer[] priorities = {2, 3};
+        int location = 1;
 
         Service s2 = new Service();
         Solution s = Solution.builder()
