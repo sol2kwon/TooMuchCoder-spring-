@@ -61,17 +61,17 @@ public class 더맵게 {
         private int[] scoville;
         private int k;
         private int answer;
-        private int[] scovilleList;
+        private Integer[] scovilleList;
 
         public String toString(){
-            return String.format("scoville : %s\nK : %d\nanswer: %d \nunboxing 해결해야함: %s:", Arrays.toString(scoville), k, answer,Arrays.toString(scovilleList));
+            return String.format("scoville : %s\nK : %d\nanswer: %d \nunboxing 해결해야함: %s:",
+                                    Arrays.toString(scoville), k, answer,Arrays.toString(scovilleList));
         }
     }
     @FunctionalInterface
     private interface SolutionService{
         Solution solution (Solution s);
     }
-
     class Service {
         SolutionService f = e -> {
             int answer = 0;
@@ -86,13 +86,17 @@ public class 더맵게 {
 
 
             while (scovilleList.peek() < e.k) {
-                if (scovilleList.size() == 1)
-                    return Solution.builder().scoville(e.scoville).scovilleList(e.getScovilleList()).answer(-1).k(e.getK()).build();
+                if (scovilleList.size() == 1) {
+                    return Solution.builder()
+                            .scoville(e.scoville).scovilleList(e.scovilleList).answer(-1).k(e.getK()).build();
+                }
                 scovilleList.add( scovilleList.poll() + scovilleList.poll() * 2);
                 answer++;
+                System.out.println("4"+ scovilleList+answer);//확인
+
             }
-            System.out.println("4"+ scovilleList+answer);//확인
-            return Solution.builder().scoville(e.scoville).scovilleList(e.getScovilleList()).answer(answer).k(e.k).build();
+            System.out.println("5"+ scovilleList+answer);//확인
+            return Solution.builder().scoville(e.scoville).scovilleList(e.scovilleList).answer(answer).k(e.k).build();
 
         };
         Solution test(Solution s){

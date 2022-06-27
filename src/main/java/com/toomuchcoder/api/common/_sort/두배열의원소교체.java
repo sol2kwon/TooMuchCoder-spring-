@@ -22,9 +22,7 @@ import java.util.Collections;
  * 동빈이의 최종 목표는 배열 A의 모든 원소의 합이 최대가 되도록 하는 것이다.
  * N, K와 배열 A, B의 정보가 주어졌을 때,
  * 최대 K번의 바꿔치기 연산을 수행하여 만들 수 있는 배열 A의 모든 원소의 합의 최댓값을 출력하는 프로그램을 작성하시오.
- *
  * [ 예시(N = 5, K = 3일때) ]
- *
  * 배열 A = {1, 2, 5, 4, 3}
  * 배열 B = {5, 5, 6, 6, 5}
  * 첫 번째 연산 : 배열 A의 1과 배열 B의 6을 바꾼다.
@@ -32,12 +30,10 @@ import java.util.Collections;
  * 세 번째 연산 : 배열 A의 3과 배열 B의 5를 바꾼다.
  * 따라서 배열 A는 [6, 6, 5, 4, 5]가 되며 이때 배열 A의 모든 원소의 합은 26이 되며 이보다 더 합을 크게 만들 수 없으므로 이 문제의 정답은 26이다.
  * [ 입력 조건 ]
- *
  * 첫 번째 줄에 N, K가 공백으로 구분되어 입력된다.
  * 두 번째 줄에 배열 A의 원소들이 공백으로 구분되어 입력된다.
  * 세 번째 줄에 배열 B의 원소들이 공백으로 구분되어 입력된다.
  * [ 출력 조건 ]
- *
  * 최대 K번의 바꿔치기 연산을 수행하여 만들 수 있는 배열 A의 모든 원소들의 합의 최댓값을 출력한다.
  * [ 입력 예시 ]
  * 5 3
@@ -78,8 +74,8 @@ public class 두배열의원소교체 {
             Arrays.sort(e.a);
             Arrays.sort(e.b,Collections.reverseOrder());
 
-            for (int i = 0; i<e.n; i++){
-                if (e.a[i] < e.b[i] && e.a[i] <= e.k){
+            for (int i = 0; i<e.k; i++){
+                if (e.a[i] < e.b[i] ){
                     int temp = e.a[i];
                     e.a[i] = e.b[i];
                     e.b[i] = temp;
@@ -89,6 +85,7 @@ public class 두배열의원소교체 {
             }
             for (int i : e.a){
                 e.amax += i;
+                System.out.println(i);//확인
             }
             return Solution.builder().a(e.a).b(e.b).amax(e.amax).build();
         };
