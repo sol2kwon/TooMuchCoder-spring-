@@ -85,9 +85,7 @@ public class 기능개발 {
             for (int i = 0; i<e.progresses.length; i++){
                 workDate.add((int) Math.ceil((100.0 - e.progresses[i])/e.speeds[i]));
                // System.out.println("1/"+workDate);
-
             }
-
             int front = workDate.poll();
             int cnt = 1;
 
