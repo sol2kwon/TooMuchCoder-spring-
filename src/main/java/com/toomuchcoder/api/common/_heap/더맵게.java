@@ -61,9 +61,10 @@ public class 더맵게 {
         private int k;
         private int answer;
         private Integer[] scovilleList;
+        private int [] a;
 
         public String toString(){
-            return String.format("scoville : %s\nK : %d\nanswer: %d \nunboxing 해결해야함: %s:",
+            return String.format("scoville : %s\nK : %d\nanswer: %d \n 해결해야함: %s:",
                                     Arrays.toString(scoville), k, answer,Arrays.toString(scovilleList));
         }
     }
@@ -92,6 +93,7 @@ public class 더맵게 {
                 scovilleList.add( scovilleList.poll() + (scovilleList.poll() * 2));
                 answer++;
                 System.out.println("4"+ scovilleList+answer);//확인
+
 
             }
             System.out.println("5"+ scovilleList+answer);//확인

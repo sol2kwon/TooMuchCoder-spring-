@@ -67,8 +67,9 @@ public class 기능개발 {
         private int[] speeds;
         private int cnt;
 
+
         public String toString(){
-            return String.format("progresses: %s speeds:%s  기능: %d개 ",
+            return String.format("progresses: %s speeds:%s  기능: %d개  ",
                                 Arrays.toString(progresses),Arrays.toString(speeds),cnt);
         }
 
@@ -83,26 +84,28 @@ public class 기능개발 {
             ArrayList<Integer> release = new ArrayList<>();
             for (int i = 0; i<e.progresses.length; i++){
                 workDate.add((int) Math.ceil((100.0 - e.progresses[i])/e.speeds[i]));
-                System.out.println(workDate);//확인
+               // System.out.println("1/"+workDate);
+
             }
 
             int front = workDate.poll();
-            System.out.println(front);//확인
             int cnt = 1;
 
             while (!workDate.isEmpty()){
                 if (front < workDate.peek()){
-                    System.out.println(workDate.peek());//확인
+                    //System.out.println("2/"+workDate.peek());//확인
                     release.add(cnt);
                     cnt = 1;
                     front = workDate.poll();
-                    System.out.println(front);//확인
                 }else {
                     cnt ++;
+                    //System.out.println("3/"+cnt);
                     workDate.poll();
+                    //System.out.println("4/"+workDate);
                 }
             }
             release.add(cnt);
+            //System.out.println("5/"+release);
 
 
             return Solution.builder().progresses(e.progresses).speeds(e.speeds).cnt(cnt).build();
