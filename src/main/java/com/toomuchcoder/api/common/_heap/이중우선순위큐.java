@@ -6,7 +6,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.PriorityQueue;
+import java.util.StringTokenizer;
 
 /**
  * packageName: com.toomuchcoder.api.common._heap
@@ -14,35 +17,35 @@ import java.util.PriorityQueue;
  * author          : solyikwon
  * date            : 2022-05-25
  * desc            :
- * 매운 것을 좋아하는 Leo는 모든 음식의 스코빌 지수를 K 이상으로 만들고 싶습니다.
- * 모든 음식의 스코빌 지수를 K 이상으로 만들기 위해 Leo는 스코빌 지수가 가장 낮은 두 개의 음식을 아래와 같이 특별한 방법으로 섞어 새로운 음식을 만듭니다.
- * 섞은 음식의 스코빌 지수 = 가장 맵지 않은 음식의 스코빌 지수 + (두 번째로 맵지 않은 음식의 스코빌 지수 * 2)
- * Leo는 모든 음식의 스코빌 지수가 K 이상이 될 때까지 반복하여 섞습니다.
- * Leo가 가진 음식의 스코빌 지수를 담은 배열 scoville과 원하는 스코빌 지수 K가 주어질 때,
- * 모든 음식의 스코빌 지수를 K 이상으로 만들기 위해 섞어야 하는 최소 횟수를 return 하도록 solution 함수를 작성해주세요.
- *
- * | 제한 사항
- * scoville의 길이는 2 이상 1,000,000 이하입니다.
- * K는 0 이상 1,000,000,000 이하입니다.
- * scoville의 원소는 각각 0 이상 1,000,000 이하입니다.
- * 모든 음식의 스코빌 지수를 K 이상으로 만들 수 없는 경우에는 -1을 return 합니다.
- *
- * | 입출력 예
- *
- *  scoville	             K	   return
- *  [1, 2, 3, 9, 10, 12]	 7	     2
- *
- * | 입출력 예 설명
- *
- * 스코빌 지수가 1인 음식과 2인 음식을 섞으면 음식의 스코빌 지수가 아래와 같이 됩니다.
- * 새로운 음식의 스코빌 지수 = 1 + (2 * 2) = 5
- * 가진 음식의 스코빌 지수 = [5, 3, 9, 10, 12]
- *
- * 스코빌 지수가 3인 음식과 5인 음식을 섞으면 음식의 스코빌 지수가 아래와 같이 됩니다.
- * 새로운 음식의 스코빌 지수 = 3 + (5 * 2) = 13
- * 가진 음식의 스코빌 지수 = [13, 9, 10, 12]
- *
- * 모든 음식의 스코빌 지수가 7 이상이 되었고 이때 섞은 횟수는 2회입니다.
+ * 이중 우선순위 큐는 다음 연산을 할 수 있는 자료구조를 말합니다.
+ * 명령어	            수신 탑(높이)
+ * I 숫자	      큐에 주어진 숫자를 삽입합니다.
+ * D 1	            큐에서 최댓값을 삭제합니다.
+ * D -1	            큐에서 최솟값을 삭제합니다.
+ * 이중 우선순위 큐가 할 연산 operations가 매개변수로 주어질 때,
+ * 모든 연산을 처리한 후 큐가 비어있으면 [0,0] 비어있지 않으면
+ * [최댓값, 최솟값]을 return 하도록 solution 함수를 구현해주세요.
+ * operations는 길이가 1 이상 1,000,000 이하인 문자열 배열입니다.
+ * operations의 원소는 큐가 수행할 연산을 나타냅니다.
+ * 원소는 “명령어 데이터” 형식으로 주어집니다.- 최댓값/최솟값을 삭제하는 연산에서 최댓값/최솟값이 둘 이상인 경우, 하나만 삭제합니다.
+ * 빈 큐에 데이터를 삭제하라는 연산이 주어질 경우, 해당 연산은 무시합니다.
+ * 입출력 예
+ * operations	return
+ * ["I 16", "I -5643", "D -1", "D 1", "D 1", "I 123", "D -1"]	[0,0]
+ * ["I -45", "I 653", "D 1", "I -642", "I 45", "I 97", "D 1", "D -1", "I 333"]	[333, -45]
+ * 입출력 예 #1
+ * 16과 -5643을 삽입합니다.
+ * 최솟값을 삭제합니다. -5643이 삭제되고 16이 남아있습니다.
+ * 최댓값을 삭제합니다. 16이 삭제되고 이중 우선순위 큐는 비어있습니다.
+ * 우선순위 큐가 비어있으므로 최댓값 삭제 연산이 무시됩니다.
+ * 123을 삽입합니다.
+ * 최솟값을 삭제합니다. 123이 삭제되고 이중 우선순위 큐는 비어있습니다.
+ * 따라서 [0, 0]을 반환합니다.
+ * 입출력 예 #2
+ * -45와 653을 삽입후 최댓값(653)을 삭제합니다. -45가 남아있습니다.
+ * -642, 45, 97을 삽입 후 최댓값(97), 최솟값(-642)을 삭제합니다. -45와 45가 남아있습니다.
+ * 333을 삽입합니다.
+ * 이중 우선순위 큐에 -45, 45, 333이 남아있으므로, [333, -45]를 반환합니다.
  * =============================================
  * DATE              AUTHOR        NOTE
  * =============================================
@@ -52,8 +55,11 @@ public class 이중우선순위큐 {
     @Builder
     @Getter
     @NoArgsConstructor
+    @AllArgsConstructor
 
     public static class Solution{
+        private String [] operations;
+        private int [] answer;
 
 
         public String toString(){
@@ -61,17 +67,68 @@ public class 이중우선순위큐 {
         }
 
     }
+
     @FunctionalInterface
     private interface SolutionService{
         Solution solution (Solution s);
     }
 
     class Service{
+        SolutionService f = e ->{
+            PriorityQueue<Integer> min = new PriorityQueue<>();
+            PriorityQueue<Integer> max = new PriorityQueue<>(Collections.reverseOrder());
+            int maxcnt = 0;
+            int cnt = 0;
 
+            for (int i = 0; i < e.operations.length; i++){
+                StringTokenizer st = new StringTokenizer(e.operations[i]);
+                String str = st.nextToken();
+
+                switch (str){
+                    case "I":
+                        String next = st.nextToken();
+                        min.add(Integer.parseInt(next));
+                        max.add(Integer.parseInt(next));
+                        break;
+
+                    case "D":
+                        if (min.size() == 0) {
+                            st.nextToken();
+                        }else if (st.nextToken().equals("1")){
+                            min.remove(max.poll());
+
+                        }else{
+                            max.remove(min.poll());
+
+                        }break;
+                }
+            }
+            if (min.size() - maxcnt == 0){
+                e.answer[1] = 0;
+            }else {
+                e.answer[1] = min.poll();
+            }
+            if (max.size() - cnt ==0){
+                e.answer[0] = 0;
+            } else {
+                e.answer[0] = max.poll();
+            }
+
+            return Solution.builder().operations(e.operations).answer(e.answer).build();
+        };
+        Solution test (Solution s){
+            return f.solution(s);
+        }
 
     }
 
     @Test
     void testSolution() {
+        String [] operations = {"I 16", "I -5643", "D -1", "D 1", "D 1", "I 123", "D -1"};
+        int [] answer;
+        Service s1 = new Service();
+        Solution s = Solution.builder().operations(operations).build();
+        System.out.println(s1.test(s));
+
     }}
 
