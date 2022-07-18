@@ -120,5 +120,10 @@ public class Lambda {
         Supplier<Double> s = Math::random;
         return (int)(s.get()*50);
     }
+    public static String choi(int i){
+        Function<Integer, String> f = String::valueOf;
+        return f.apply(i);
+    }
+
 }
 

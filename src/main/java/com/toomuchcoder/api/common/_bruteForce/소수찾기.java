@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static com.toomuchcoder.api.common.lambdas.Lambda.choi;
+
 /**
  * packageName: com.toomuchcoder.api.common.algorithm
  * fileName        : PrimeNumber.java
@@ -22,12 +24,20 @@ import java.util.List;
 public class 소수찾기 {
     @Builder @Getter @AllArgsConstructor
     static class Solution{
+        private int a;
+        private String res;
         @Override public String toString(){
-            int a;
-            a = 0;
-            int count = 0;
+            return "소수 :" +  res;
+        }
 
-            for (int i = 2; i <= a; i++) {
+    }
+    @FunctionalInterface interface SolutionService{ Solution solution(Solution solution);}
+
+    static class Service{
+        static SolutionService solutionService = e ->{
+            int count = 0;
+            String res = "";
+            for (int i = 2; i <= e.a; i++) {
                 for (int j = 2; j <= i; j++) {
                     if (i % j == 0) {
                         count++;
@@ -35,20 +45,18 @@ public class 소수찾기 {
                 }
 
                 if (count == 1) {
-                    System.out.print(i + " ");
+                    res += " " + choi(i);
                 }
                 count = 0;
             }
 
-            return "";
-        }
-
+            return Solution.builder().res(res).build();
+        };
     }
-    @FunctionalInterface static interface SolutionService{ Solution solution(Solution solution);}
 
     @Test
     void solution(){
-
+        System.out.println(Service.solutionService.solution(Solution.builder().a(100).build()));
     }
     }
 

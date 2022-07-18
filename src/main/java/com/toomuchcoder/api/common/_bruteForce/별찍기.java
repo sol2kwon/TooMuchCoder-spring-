@@ -19,17 +19,31 @@ import static com.toomuchcoder.api.common.lambdas.Lambda.countStar;
  * 2022-05-18         solyikwon      최초 생성
  **/
 public class 별찍기 {
-    @Getter @Builder
-    @AllArgsConstructor @NoArgsConstructor
-    static class Solution{
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor
+    static class Solution {
         private String star;
         private int random;
-        @Override public String toString(){
+
+        @Override
+        public String toString() {
             return star;
-        }}
-    @FunctionalInterface interface SolutionService { Solution solution(Solution s);}
-    @FunctionalInterface interface SolutionService1 { Solution solution(Solution s);}
-    static class Service{
+        }
+    }
+
+    @FunctionalInterface
+    interface SolutionService {
+        Solution solution(Solution s);
+    }
+
+    @FunctionalInterface
+    interface SolutionService1 {
+        Solution solution(Solution s);
+    }
+
+    static class Service {
         static SolutionService triangleStarPrint = e -> {
 
             // triangleStarPrint
@@ -48,7 +62,7 @@ public class 별찍기 {
             }
             return Solution.builder().star(res).build();
         };
-        static SolutionService1 rectangleStarPrint = e ->{
+        static SolutionService1 rectangleStarPrint = e -> {
             // rectangleStarPrint
             String res = "";
             int rand = e.random;
@@ -66,8 +80,8 @@ public class 별찍기 {
 
 
     @Test
-    void testSolution(){
+    void testSolution() {
         System.out.println(Service.triangleStarPrint.solution(Solution.builder().random(countStar()).build()));
         System.out.println(Service.rectangleStarPrint.solution(Solution.builder().random(countStar()).build()));
+    }
 }
-
