@@ -3,6 +3,8 @@ package com.toomuchcoder.api.common._bruteForce;
 import lombok.*;
 import org.junit.jupiter.api.Test;
 
+import static com.toomuchcoder.api.common.lambdas.Lambda.lotto;
+
 /**
  * packageName: com.toomuchcoder.api.common._bruteForce
  * fileName        : Lotto.java
@@ -75,20 +77,32 @@ import org.junit.jupiter.api.Test;
  * 2022-05-24         solyikwon      최초 생성
  **/
 public class 로또 {
-    @Data
+    @Getter
+    @Builder
     @AllArgsConstructor
+    @NoArgsConstructor
     static class Solution{
 
-        private int num1;
-        private String opcode;
-        private int num2;
+        private String res;
+        private int lottonumber;
+
         @Override public String toString(){
 
             System.out.println("06 로또");
+
+            return "";
+        }
+    }
+    @FunctionalInterface interface SolutionService {
+        로또.Solution solution(로또.Solution s);
+    }
+    @Test
+    void testSolution(){
+        SolutionService f = e ->{
             String res = "";
             int[] lotto = new int[6];
             for (int i = 0; i < 6; i++) {
-                lotto[i] = (int)(Math.random()*45) + 1;
+                lotto[i] = e.getLottonumber();
                 for (int j = 0; j < i; j++) {
                     if (lotto[i] == lotto[j])
                         i--;
@@ -98,16 +112,11 @@ public class 로또 {
             for (int i = 0; i < 6; i++) {
                 res += String.format(lotto[i] + " ");
             }
-            System.out.println(res);
-            return "";
-        }
+            return Solution.builder().res(res).build();
+        };
+        Solution s = f.solution(Solution.builder().lottonumber(lotto()).build());
     }
-    @FunctionalInterface interface SolutionService {
-        로또.Solution solution(로또.Solution s);
-    }
-    @Test
-    void testSolution(){
 
-    }
+
 }
 

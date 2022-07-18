@@ -106,6 +106,19 @@ public class Lambda {
     public static String date(){
         Supplier<String> f = () -> string(LocalDate.now());
         return f.get();
+
+
 }
+    public static int lotto(){
+        //BiFunction<Integer, Integer, Double> s = Math::random;
+        Supplier<Double> s = Math::random;
+        return (int)(s.get()*45)+1;
+    }
+
+    public static int countStar(){
+        //BiFunction<Integer, Integer, Double> s = Math::random;
+        Supplier<Double> s = Math::random;
+        return (int)(s.get()*50);
+    }
 }
 
