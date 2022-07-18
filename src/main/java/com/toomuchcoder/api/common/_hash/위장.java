@@ -2,6 +2,7 @@ package com.toomuchcoder.api.common._hash;
 
 import com.toomuchcoder.api.common._greedy.구명보트;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Test;
@@ -18,22 +19,27 @@ import org.junit.jupiter.api.Test;
  * 2022-05-25         solyikwon      최초 생성
  **/
 public class 위장 {
-    @Getter
-    @NoArgsConstructor
-
+    @Builder
     public static class Solution{
 
-
-        public String toString(){
-            return String.format(" ");
+        @Override public String toString(){
+            return String.format("");
         }
-
     }
-    @FunctionalInterface private interface ISolution{
-        구명보트.Solution solution (구명보트.Solution s);
+    @FunctionalInterface private interface SolutionService{
+        Solution solution(Solution s);
     }
-    @Test
-    void testSolution(){
-
+    public static class Service{
+        SolutionService f = e -> {
+            return Solution.builder().build();
+        };
+        Solution test(Solution s){
+            return f.solution(s);
+        }
+    }
+    @Test void testSolutionTest(){
+        Service service = new Service();
+        Solution solution = Solution.builder().build();
+        System.out.println(service.test(solution));
     }
 }
