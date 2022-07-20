@@ -6,6 +6,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 /**
  * packageName: com.toomuchcoder.api.common._bruteForce
  * fileName        : 동일배열판별.java
@@ -18,22 +22,12 @@ import org.junit.jupiter.api.Test;
  * 2022-05-25         solyikwon      최초 생성
  **/
 public class 동일배열판별 {
-    @Builder
-    @Getter
-    @AllArgsConstructor
-    @NoArgsConstructor
-    static class Solution{
-        private String result;
 
-        @Override
-        public String toString() {
-            return String.format("A배열과 B배열은 %s 배열입니다",
-                    result);
-        }
+        public static void main(String[] args) {
+        int[] arr = {1, 1, 1, 1, 1};
+
+        Set<Integer> distinct = Arrays.stream(arr).boxed().collect(Collectors.toSet());
+        boolean allEqual = distinct.size() == 1;
+        System.out.println(allEqual);
     }
-    @FunctionalInterface interface ISolution{
-        Solution solution(Solution s);
-    }
-    @Test
-    void test(){}
 }

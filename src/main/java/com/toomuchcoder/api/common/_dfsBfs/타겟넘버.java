@@ -19,23 +19,28 @@ import org.junit.jupiter.api.Test;
  * 2022-05-25         solyikwon      최초 생성
  **/
 public class 타겟넘버 {
-    @Builder
-    @Getter
-    @NoArgsConstructor
+    int count = 0;
+    public int solution(int[] numbers, int target) {
+        int answer = 0;
+        dfs(numbers, 0, target, 0);
+        answer = this.count;
 
-    public static class Solution{
+        return answer;
+    }
 
-
-        public String toString(){
-            return String.format(" ");
+    public void dfs(int[] numbers, int depth, int target, int result){
+        if (depth == numbers.length){
+            if (target == result){
+                this.count++;
+            }
+            return;
         }
 
-    }
-    @FunctionalInterface private interface ISolution{
-        ATM.Solution solution (ATM.Solution s);
-    }
-    @Test
-    void testSolution(){
+        int add = result + numbers[depth];
+        int sub = result - numbers[depth];
+
+        dfs(numbers, depth+1, target, add);
+        dfs(numbers, depth+1, target, sub);
 
     }
 }
