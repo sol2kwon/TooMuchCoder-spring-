@@ -32,7 +32,7 @@ public class 전보 {
 
     }
     @FunctionalInterface private interface ISolution{
-        ATM.Solution solution (ATM.Solution s);
+        Solution solution (Solution s);
     }
     @Test
     void testSolution(){
